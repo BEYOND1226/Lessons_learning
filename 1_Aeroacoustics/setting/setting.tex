@@ -1,0 +1,74 @@
+\documentclass[12pt,a4paper]{article}
+
+%---------------------------------设置字体大小---------------------------------%
+\usepackage{type1cm}
+% 字号与行距，统一前缀s(a.k.a size)
+\newcommand{\sChuhao}{\fontsize{42pt}{63pt}\selectfont}                 % 初号, 1.5倍
+\newcommand{\sYihao}{\fontsize{26pt}{36pt}\selectfont}                  % 一号, 1.4倍
+\newcommand{\sErhao}{\fontsize{22pt}{28pt}\selectfont}                  % 二号, 1.25倍
+\newcommand{\sXiaoer}{\fontsize{18pt}{18pt}\selectfont}                 % 小二, 单倍
+\newcommand{\sSanhao}{\fontsize{16pt}{24pt}\selectfont}                 % 三号, 1.5倍
+\newcommand{\sXiaosan}{\fontsize{15pt}{22pt}\selectfont}                % 小三, 1.5倍
+\newcommand{\sSihao}{\fontsize{14pt}{21pt}\selectfont}                  % 四号, 1.5倍
+\newcommand{\sHalfXiaosi}{\fontsize{12.5pt}{16.25pt}\selectfont}        % 半小四, 1.25倍
+\newcommand{\sLargeHalfXiaosi}{\fontsize{13pt}{19pt}\selectfont}        % 半小四, 1.5倍
+\newcommand{\sXiaosi}{\fontsize{12pt}{14.4pt}\selectfont}               % 小四, 1.25倍
+\newcommand{\sLargeWuhao}{\fontsize{11pt}{11pt}\selectfont}             % 大五, 单倍
+\newcommand{\sWuhao}{\fontsize{10.5pt}{10.5pt}\selectfont}              % 五号, 单倍
+\newcommand{\sXiaowu}{\fontsize{9pt}{9pt}\selectfont}                   % 小五, 单倍
+
+%---------------------------------设置中文字体---------------------------------%
+\usepackage{fontspec}
+\usepackage[SlantFont,BoldFont,CJKchecksingle]{xeCJK}
+\usepackage{CJKnumb}
+% 使用 Adobe 字体
+\newcommand\adobeSog{SimSun}
+\newcommand\adobeHei{SimHei}
+\newcommand\adobeKai{KaiTi}
+\newcommand\adobeFag{FangSong}
+\newcommand\codeFont{Consolas}
+% 设置字体
+\defaultfontfeatures{Mapping=tex-text}
+\setCJKmainfont[ItalicFont=\adobeKai, BoldFont=\adobeHei]{\adobeSog}
+\setCJKsansfont[ItalicFont=\adobeKai, BoldFont=\adobeHei]{\adobeSog}
+\setCJKmonofont{\codeFont}
+\setmonofont{\codeFont}
+% 设置字体族
+\setCJKfamilyfont{song}{\adobeSog}      % 宋体
+\setCJKfamilyfont{hei}{\adobeHei}       % 黑体
+\setCJKfamilyfont{kai}{\adobeKai}       % 楷体
+\setCJKfamilyfont{fang}{\adobeFag}      % 仿宋体
+
+% 新建字体命令，统一前缀f(a.k.a font)
+\newcommand{\fSong}{\CJKfamily{song}}
+\newcommand{\fHei}{\CJKfamily{hei}}
+\newcommand{\fFang}{\CJKfamily{fang}}
+\newcommand{\fKai}{\CJKfamily{kai}}
+
+%--------------------------设置中文段落缩进与正文版式--------------------------%
+\XeTeXlinebreaklocale "zh"                      % 使用中文的换行风格
+\XeTeXlinebreakskip = 0pt plus 1pt              % 调整换行逻辑的弹性大小
+\usepackage{indentfirst}                        % 段首空格设置
+\setlength{\parindent}{26pt}                    % 段首空格长度
+\setlength{\parskip}{3pt plus 1pt minus 1pt}    % 段落间距
+\renewcommand{\baselinestretch}{1.25}           % 行距
+
+%---------------------------------纸张大小设置---------------------------------%
+\usepackage{geometry}
+% 普通A4格式缩进
+% \geometry{left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm}
+% 论文标准缩进
+\geometry{left=1.25in,right=1.25in,top=1in,bottom=1.5in}
+
+% 公式对齐
+\usepackage{amsmath}
+
+\usepackage{enumerate}
+\usepackage{enumitem}
+\setlist[enumerate,1]{label=\arabic*.,font=\textup,
+leftmargin=7mm,labelsep=1.5mm,topsep=0mm,itemsep=-0.8mm}
+\setlist[enumerate,2]{label=(\arabic*),font=\textup, 
+leftmargin=7mm,labelsep=1.5mm,topsep=-0.8mm,itemsep=-0.8mm}
+
+\renewcommand{\baselinestretch}{1.25}
+\sHalfXiaosi\fSong

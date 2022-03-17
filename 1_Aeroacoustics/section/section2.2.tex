@@ -1,0 +1,111 @@
+\begin{enumerate}
+    \item 已知三维频域自由空间格林函数为
+        $ G_{0} \left( \mathbf{x},\mathbf{y},\omega \right) = \frac{e^{i k r}}{4 \pi r} $ ，
+        推导$ \frac{ \partial G_{0} }{ \partial y_{i} } $和
+        $ \frac{ \partial^{2} G_{0} }{ \partial y_{i} \partial y_{j} } $的解析表达式。
+
+        已知，在三维频域下：
+        \begin{equation}
+            r = \sqrt{ \sum^{n = 3}_{i = 1} \left( x_{i} - y_{i} \right)^{2}}
+        \end{equation}
+        因此有：
+        \begin{equation}
+            \begin{aligned}
+                \frac{ \partial G_{0} }{ \partial y_{i} }
+                &= \frac{ \partial }{ \partial r } \left(  \frac{e^{i k r}}{4 \pi r} \right) \frac{ \partial r }{ \partial y_{i} }\\
+                &= \frac{i k r e^{ikr} - e^{ikr} }{4 \pi r^{2}} \frac{\partial \sqrt{ \sum^{n = 3}_{i = 1} \left( x_{i} - y_{i} \right)^{2}} }{\partial y_{i}} \\
+                &= \left(\frac{i k}{4 \pi r} - \frac{1}{4 \pi r^{2}}\right) e^{ikr} \left(- \frac{x_{i} - y_{i}}{r}\right)\\
+                &= \frac{x_{i} - y_{i}}{r} \left(\frac{e^{ikr}}{4 \pi r^{2}}-\frac{i k e^{ikr}}{4 \pi r}\right)
+            \end{aligned}
+        \end{equation}
+        同理有：
+        \begin{equation}
+            \begin{aligned}
+                \frac{ \partial^{2} G_{0} }{ \partial y_{i} \partial y_{j} }
+                &= \frac{ \partial }{ \partial y_{j} } \left(\frac{ \partial G_{0} }{ \partial y_{i} } \right) \\
+                &= \frac{ \partial }{ \partial r } \left(\frac{ \partial G_{0} }{ \partial y_{i} } \right) \frac{ \partial r }{ \partial y_{i} } \\
+                &= \frac{x_{i}-y_{i}}{r^2} \left( - \frac{3 e^{ikr}}{4 \pi r^2} + \frac{3 i k e^{ikr}}{4 \pi r} + \frac{k^{2} e^{ikr}}{4 \pi }\right) \left(-\frac{x_{j}-y_{j}}{r}\right) \\
+                &= \frac{(x_{i}-y_{i})(x_{j}-y_{j})}{r^3} \left(\frac{3 e^{ikr}}{4 \pi r^2} - \frac{3 i k e^{ikr}}{4 \pi  r} - \frac{k^{2} e^{ikr}}{4 \pi }\right)
+            \end{aligned}
+        \end{equation}
+        综上，
+        \begin{align}
+            \frac{ \partial G_{0} }{ \partial y_{i} } 
+            &= \frac{x_{i} - y_{i}}{r} \left(\frac{e^{ikr}}{4 \pi r^{2}}-\frac{i k e^{ikr}}{4 \pi r}\right) \\
+            \frac{ \partial^{2} G_{0} }{ \partial y_{i} \partial y_{j} }
+            &= \frac{(x_{i}-y_{i})(x_{j}-y_{j})}{r^3} \left(\frac{3 e^{ikr}}{4 \pi r^2} - \frac{3 i k e^{ikr}}{4 \pi r} - \frac{k^{2} e^{ikr}}{4 \pi }\right)
+        \end{align}
+    
+    \clearpage
+
+    \item 假设静止固体表面是可穿透的，并忽略粘性的贡献，写出Curle方程的频域积分公式。
+
+        已知忽略粘性贡献的Curle方程为：
+        \begin{equation}
+            \begin{aligned}
+                c_{0}^{2} \rho^{\prime}(\mathbf{x}, t) 
+                &=\int_{V} \int_{-\infty}^{+\infty} T_{i j} \frac{\partial^{2} G}{\partial y_{i} \partial y_{j}} \mathrm{~d}^{3} \mathbf{y} \mathrm{d} \tau \\
+                &-\int_{S} \int_{-\infty}^{+\infty}\left(\rho u_{i} u_{j}+p_{i j}\right) n_{j} \frac{\partial G}{\partial y_{i}} \mathrm{~d}^{2} \mathbf{y} \mathrm{d} \tau \\
+                &-\int_{S} \int_{-\infty}^{+\infty} G \frac{\partial\left(\rho u_{j} n_{j}\right)}{\partial \tau} \mathrm{d}^{2} \mathbf{y} \mathrm{d} \tau
+            \end{aligned}
+        \end{equation}
+        不妨设：
+        \begin{align}
+            F_{i}(\mathbf{y}, \tau)
+            &=\left(\rho u_{i} u_{j}+p_{i j}\right) n_{j} \\
+            Q(\mathbf{y}, \tau)
+            &=\rho u_{j} n_{j}
+        \end{align}
+        代入自由格林函数$G_{0}$，根据$G_{0}$的性质：
+        \begin{align}
+            \frac{\partial G_{0}}{\partial y_{i}}
+            &= -\frac{\partial G_{0}}{\partial x_{i}} \\
+            \quad \frac{\partial^{2} G_{0}}{\partial y_{i} \partial y_{j}}
+            &= \frac{\partial^{2} G_{0}}{\partial x_{i} \partial x_{j}}
+        \end{align}
+        可以得到：
+        \begin{equation}
+            \begin{aligned}
+                c_{0}^{2} \rho^{\prime}(\mathbf{x}, t) 
+                =&\frac{\partial^{2}}{\partial x_{i} \partial x_{j}} \int_{-\infty}^{+\infty} \int_{V} T_{i j}(\mathbf{y}, \tau) G_{0} \mathrm{~d}^{3} \mathbf{y} \mathrm{d} \tau \\
+                &+\frac{\partial}{\partial x_{i}} \int_{-\infty}^{+\infty} \int_{S} F_{i}(\mathbf{y}, \tau) G_{0} \mathrm{~d}^{2} \mathbf{y d} \tau \\
+                &-\int_{-\infty}^{+\infty} \int_{S} \frac{\partial Q(\mathbf{y}, \tau)}{\partial \tau} G_{0} \mathrm{~d}^{2} \mathbf{y} \mathrm{d} \tau \\
+                =&\frac{\partial^{2}}{\partial x_{i} \partial x_{j}} \int_{V}\left[T_{i j}\left(\mathbf{y}, t-r / c_{0}\right)\right]_{\tau=t-r / c_{0}} \frac{\mathrm{d}^{3} \mathbf{y}}{4 \pi r} \\
+                &+\frac{\partial}{\partial x_{i}} \int_{S}\left[F_{i}\left(\mathbf{y}, t-r / c_{0}\right)\right]_{\tau=t-r / c_{0}} \frac{\mathrm{d}^{2} \mathbf{y}}{4 \pi r} \\
+                &-\int_{S}\left[\frac{\partial}{\partial \tau} Q\left(\mathbf{y}, t-r / c_{0}\right)\right]_{\tau=t-r / c_{0}} \frac{\mathrm{d}^{2} \mathbf{y}}{4 \pi r}
+            \end{aligned}
+        \end{equation}
+        根据Fourier变换，可得：
+        \begin{equation}
+            \begin{aligned}
+                \left( c_{0}^{2} \tilde{\rho^{\prime}}(\mathbf{x}, \omega) \right)_{quadrupole}
+                &= \frac{\partial^{2}}{\partial x_{i} \partial x_{j}} \int_{V} \int_{-\infty}^{+\infty} T_{i j}(\mathbf{y}, t-r / c_{0}) e^{i \omega t}\mathrm{d} t \frac{\mathrm{d}^{3} \mathbf{y}}{4 \pi r} \\
+                &= \frac{\partial^{2}}{\partial x_{i} \partial x_{j}} \int_{V} \widetilde{T_{i j}}(\mathbf{y}, \omega) e^{i \omega r / c_{0}} \frac{\mathrm{d}^{3} \mathbf{y}}{4 \pi r}
+            \end{aligned}
+        \end{equation}
+        同理有：
+        \begin{equation}
+            \begin{aligned}
+                \left( c_{0}^{2} \tilde{\rho^{\prime}}(\mathbf{x}, \omega) \right)_{dipole}
+                &= \frac{\partial}{\partial x_{i}} \int_{S} \int_{-\infty}^{+\infty} F_{i}(\mathbf{y}, t-r / c_{0}) e^{i \omega t}\mathrm{d} t \frac{\mathrm{d}^{2} \mathbf{y}}{4 \pi r} \\
+                &= \frac{\partial}{\partial x_{i}} \int_{S} \widetilde{F_{i}}(\mathbf{y}, \omega) e^{i \omega r / c_{0}} \frac{\mathrm{d}^{2} \mathbf{y}}{4 \pi r}
+            \end{aligned}
+        \end{equation}
+        根据Fourier变换的偏分性质，可得：
+        \begin{equation}
+            \begin{aligned}
+                \left( c_{0}^{2} \tilde{\rho^{\prime}}(\mathbf{x}, \omega) \right)_{monopole}
+                &= \int_{S} \int_{-\infty}^{+\infty} \frac{\partial}{\partial \tau} \left[Q\left(\mathbf{y}, t-r / c_{0}\right)\right] e^{i \omega t}\mathrm{d} t \frac{\mathrm{d}^{2} \mathbf{y}}{4 \pi r} \\
+                &= \int_{S} - i \omega \widetilde{Q}(\mathbf{y}, \omega) e^{i \omega r / c_{0}} \frac{\mathrm{d}^{2} \mathbf{y}}{4 \pi r}
+            \end{aligned}
+        \end{equation}
+        综上，curle方程的频域积分表达式为：
+        \begin{equation}
+            \begin{aligned}
+                c_{0}^{2} \tilde{\rho^{\prime}}(\mathbf{x}, \omega)
+                &= \frac{\partial^{2}}{\partial x_{i} \partial x_{j}} \int_{V} \widetilde{T_{i j}}(\mathbf{y}, \omega) e^{i \omega r / c_{0}} \frac{\mathrm{d}^{3} \mathbf{y}}{4 \pi r} \\
+                &+ \frac{\partial}{\partial x_{i}} \int_{S} \widetilde{F_{i}}(\mathbf{y}, \omega) e^{i \omega r / c_{0}} \frac{\mathrm{d}^{2} \mathbf{y}}{4 \pi r} \\
+                &+ \int_{S} i \omega \widetilde{Q}(\mathbf{y}, \omega) e^{i \omega r / c_{0}} \frac{\mathrm{d}^{2} \mathbf{y}}{4 \pi r}
+            \end{aligned}
+        \end{equation}
+\end{enumerate}

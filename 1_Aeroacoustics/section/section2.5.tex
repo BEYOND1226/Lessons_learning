@@ -1,0 +1,144 @@
+\begin{enumerate}
+    \item 在FW-H方程中，\(f = 0\)的面在运动过程中形状能发生改变吗？
+    
+        不能。FW-H方程的前提假设为刚体运动，\(f = 0\)的面不能发生形变。
+
+    \item 如果\(|\nabla f| \neq 1\)，试推导FW-H方程，并求其积分表达式。
+        
+        对于表面，有：
+        \begin{equation}
+            \begin{aligned}
+                \frac{\mathrm{D} H(f)}{\mathrm{D} t}
+                =\frac{\partial H(f)}{\partial t}+v_{j} \frac{\partial H(f)}{\partial x_{j}}
+                =0 \\
+                \frac{\partial H(f)}{\partial x_{j}}
+                =\frac{\partial H(f)}{\partial f} |\nabla f| n_{j}
+                =|\nabla f| n_{j} \delta(f)
+            \end{aligned}
+        \end{equation}
+        由上式可得：
+        \begin{equation}
+            \frac{\partial H(f)}{\partial t}
+            =-v_{j} \frac{\partial H(f)}{\partial x_{j}}
+            =-v_{j} |\nabla f| n_{j} \delta(f)
+        \end{equation}
+        于是有：
+        \begin{equation}
+            \begin{aligned}
+                \frac{\partial[\phi H(f)]}{\partial t}
+                =H(f) \frac{\partial \phi}{\partial t}+\phi \frac{\partial H(f)}{\partial t}
+                =H(f) \frac{\partial \phi}{\partial t}-\phi v_{j} |\nabla f| n_{j} \delta(f) \\
+                \frac{\partial[\phi H(f)]}{\partial x_{i}}
+                =H(f) \frac{\partial \phi}{\partial x_{i}}+\phi \frac{\partial H(f)}{\partial x_{i}}
+                =H(f) \frac{\partial \phi}{\partial x_{i}}+\phi |\nabla f| n_{i} \delta(f)
+            \end{aligned}
+        \end{equation}
+        代入连续方程有：
+        \begin{equation}
+            \begin{aligned}
+                \frac{\partial\left[\rho^{\prime} H(f)\right]}{\partial t}+\frac{\partial\left[\rho u_{j} H(f)\right]}{\partial x_{j}} 
+                &=\rho u_{j} |\nabla f| n_{j} \delta(f)-\rho^{\prime} v_{j} |\nabla f| n_{j} \delta(f) \\
+                &=\left[\rho\left(u_{j}-v_{j}\right)+\rho_{0} v_{j}\right] |\nabla f| n_{j} \delta(f)
+            \end{aligned}
+        \end{equation}
+        代入动量方程有：
+        \begin{equation}
+            \begin{aligned}
+                \frac{\partial\left[H(f) \rho u_{i}\right]}{\partial t}+c_{0}^{2} \frac{\partial\left[H(f) \rho^{\prime}\right]}{\partial x_{i}} 
+                &=-H(f) \frac{\partial T_{i j}}{\partial x_{j}}+\left(c_{0}^{2} \rho^{\prime} \delta_{i j}-\rho u_{i} v_{j}\right) |\nabla f| n_{j} \delta(f) \\
+                &=-\frac{\partial\left[H(f) T_{i j}\right]}{\partial x_{j}}+\left(T_{i j}+c_{0}^{2} \rho^{\prime} \delta_{i j}-\rho u_{i} v_{j}\right) |\nabla f| n_{j} \delta(f) \\
+                &=-\frac{\partial\left[H(f) T_{i j}\right]}{\partial x_{j}}+\left[\rho u_{i}\left(u_{j}-v_{j}\right)+p_{i j}\right] |\nabla f| n_{j} \delta(f)
+            \end{aligned}
+        \end{equation}
+        于是有：
+        \begin{equation}
+            \frac{\partial^{2}\left[\rho^{\prime} H(f)\right]}{\partial t^{2}}-c_{0}^{2} \frac{\partial^{2}\left[H(f) \rho^{\prime}\right]}{\partial x_{i}^{2}}
+            =\frac{\partial^{2}\left[H(f) T_{i j}\right]}{\partial x_{i} \partial x_{j}}-\frac{\partial\left[F_{i} \delta(f)\right]}{\partial x_{i}}+\frac{\partial[Q \delta(f)]}{\partial t}
+        \end{equation}
+        其中，
+        \begin{equation*}
+            \begin{aligned}
+                Q=\left[\rho\left(u_{j}-v_{j}\right)+\rho_{0} v_{j}\right] |\nabla f| n_{j} \\
+                F_{i}=\left[\rho u_{i}\left(u_{j}-v_{j}\right)+p_{i j}\right] |\nabla f| n_{j}
+            \end{aligned}
+        \end{equation*}
+        其积分表达式可以表示为：
+        \begin{equation}
+            H(f) c_{0}^{2} \rho^{\prime}(\mathbf{x}, t)
+            =\int_{V} \int_{-\infty}^{+\infty} G\left\{\frac{\partial^{2}\left[H(f) T_{i j}\right]}{\partial y_{i} \partial y_{j}}-\frac{\partial\left[F_{i} \delta(f)\right]}{\partial y_{i}}+\frac{\partial[Q \delta(f)]}{\partial \tau}\right\} \mathrm{d} \tau \mathrm{d}^{3} \mathbf{y}
+        \end{equation}
+        对于四极子项：
+        \begin{equation}
+            \begin{aligned}
+                G \frac{\partial^{2}\left[T_{i j} H(f)\right]}{\partial y_{i} \partial y_{j}}
+                =&\left[T_{i j} H(f)\right] \frac{\partial^{2} G}{\partial y_{i} \partial y_{j}} \\
+                &+\frac{\partial}{\partial y_{i}}\left(G \frac{\partial\left[T_{i j} H(f)\right]}{\partial y_{j}}\right) \\
+                &-\frac{\partial}{\partial y_{j}}\left(\left[T_{i j} H(f)\right] \frac{\partial G}{\partial y_{i}}\right)
+            \end{aligned}
+        \end{equation}
+        其中，
+        \begin{align*}
+            \int_{\Sigma+\Omega} \int_{-\infty}^{+\infty} \frac{\partial}{\partial y_{i}}\left(G \frac{\partial\left[T_{i j} H(f)\right]}{\partial y_{j}}\right) \mathrm{d} \tau \mathrm{d}^{3} \mathbf{y}=\int_{S_{\infty}} \int_{-\infty}^{+\infty} G \frac{\partial\left[T_{i j} H(f)\right]}{\partial y_{j}} n_{i} \mathrm{~d} \tau \mathrm{d}^{2} \mathbf{y}=0 \\
+            \int_{\Sigma+\Omega} \int_{-\infty}^{+\infty} \frac{\partial}{\partial y_{j}}\left(T_{i j} H(f) \frac{\partial G}{\partial y_{i}}\right) \mathrm{d} \tau \mathrm{d}^{3} \mathbf{y}=\int_{S_{\infty}} \int_{-\infty}^{+\infty} T_{i j} H(f) \frac{\partial G}{\partial y_{j}} n_{j} \mathrm{~d} \tau \mathrm{d}^{2} \mathbf{y}=0
+        \end{align*}
+        因此有：
+        \begin{equation}
+            \int_{V} \int_{-\infty}^{+\infty} G \frac{\partial^{2}\left[H(f) T_{i j}\right]}{\partial y_{i} \partial y_{j}} \mathrm{~d} \tau \mathrm{d}^{3} \mathbf{y}=\int_{V} \int_{-\infty}^{+\infty} H(f) T_{i j} \frac{\partial^{2} G}{\partial y_{i} \partial y_{j}} \mathrm{~d} \tau \mathrm{d}^{3} \mathbf{y}
+        \end{equation}
+        对于偶极子项：
+        \begin{equation}
+            \begin{aligned}
+                \int_{V} \int_{-\infty}^{+\infty} G \frac{\partial\left[F_{i} \delta(f)\right]}{\partial y_{i}} \mathrm{~d} \tau \mathrm{d}^{3} \mathbf{y} 
+                &=\int_{V} \int_{-\infty}^{+\infty} \frac{\partial\left[G F_{i} \delta(f)\right]}{\partial y_{i}} \mathrm{~d} \tau \mathrm{d}^{3} \mathbf{y} \\
+                &-\int_{V} \int_{-\infty}^{+\infty} F_{i} \delta(f) \frac{\partial G}{\partial y_{i}} \mathrm{~d} \tau \mathrm{d}^{3} \mathbf{y} 
+            \end{aligned}
+        \end{equation}
+        对于无边界区域，有：
+        \begin{equation}
+            \int_{V} \frac{\partial\left[G F_{i} \delta(f)\right]}{\partial y_{i}} \mathrm{~d}^{3} \mathbf{y}=\int_{\Sigma+\Omega} \frac{\partial\left[G F_{i} \delta(f)\right]}{\partial y_{i}} \mathrm{~d}^{3} \mathbf{y}=\int_{S_{\sim}} G F_{i} \delta(f) n_{i} \mathrm{~d}^{2} \mathbf{y}=0
+        \end{equation}
+        因此有：
+        \begin{equation}
+            \int_{V} \int_{-\infty}^{+\infty} G \frac{\partial\left[F_{i} \delta(f)\right]}{\partial y_{i}} \mathrm{~d} \tau \mathrm{d}^{3} \mathbf{y}
+            =-\int_{V} \int_{-\infty}^{+\infty} F_{i} \delta(f) \frac{\partial G}{\partial y_{i}} \mathrm{~d} \tau \mathrm{d}^{3} \mathbf{y}
+        \end{equation}
+        对于单极子项：
+        \begin{equation}
+            \begin{aligned}
+                \int_{V} \int_{-\infty}^{+\infty} G \frac{\partial[Q \delta(f)]}{\partial \tau} \mathrm{d} \tau \mathrm{d}^{3} \mathbf{y} 
+                &=\int_{V} \int_{-\infty}^{+\infty} \frac{\partial[G Q \delta(f)]}{\partial \tau} \mathrm{d} \tau \mathrm{d}^{3} \mathbf{y} \\
+                &-\int_{V} \int_{-\infty}^{+\infty} Q \delta(f) \frac{\partial G}{\partial \tau} \mathrm{d} \tau \mathrm{d}^{3} \mathbf{y} 
+            \end{aligned}
+        \end{equation}
+        根据\(G=\frac{\partial G}{\partial \tau}=0 (t<\tau) \),有：
+        \begin{equation}
+            \int_{-\infty}^{+\infty} \frac{\partial[G Q \delta(f)]}{\partial \tau} \mathrm{d} \tau
+            =\left.G Q \delta(f)\right|_{\tau=-\infty} ^{\tau=+\infty}
+            = 0
+        \end{equation}
+        因此有：
+        \begin{equation}
+            \int_{V} \int_{-\infty}^{+\infty} G \frac{\partial[Q \delta(f)]}{\partial \tau} \mathrm{d} \tau \mathrm{d}^{3} \mathbf{y}
+            =-\int_{V} \int_{-\infty}^{+\infty} Q \delta(f) \frac{\partial G}{\partial \tau} \mathrm{d} \tau \mathrm{d}^{3} \mathbf{y}
+        \end{equation}
+        综上，FW-H方程的积分表达式可表示为：
+        \begin{equation}
+            \begin{aligned}
+                H(f) c_{0}^{2} \rho^{\prime}(\mathbf{x}, t)
+                =&\int_{V} \int_{-\infty}^{+\infty} H(f) T_{i j} \frac{\partial^{2} G}{\partial y_{i} \partial y_{j}} \mathrm{~d} \tau \mathrm{d}^{3} \mathbf{y} \\
+                &+\int_{V} \int_{-\infty}^{+\infty} F_{i} \delta(f) \frac{\partial G}{\partial y_{i}} \mathrm{~d} \tau \mathrm{d}^{3} \mathbf{y} \\
+                &-\int_{V} \int_{-\infty}^{+\infty} Q \delta(f) \frac{\partial G}{\partial \tau} \mathrm{d} \tau \mathrm{d}^{3} \mathbf{y}   
+            \end{aligned}
+        \end{equation}
+
+
+
+    \item 如果\(f=0\)的面不是固体表面，而是流体区域任意选择的可穿透封闭面，FW-H方程还成立吗？
+    
+        成立。
+        FW-H方程仅假设\(f=0\)为移动的刚体表面，并没有假设表面是否可穿透。
+        因此FW-H方程对可穿透表面成立。
+        对于不可穿透表面，FW-H方程可以进一步简化，简化后的方程对可穿透表面不成立。
+
+        
+\end{enumerate}

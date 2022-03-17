@@ -1,0 +1,138 @@
+\begin{enumerate}
+    \item 定义任意时域函数$f(t)$和$h(t)$，
+    通过Fourier变换得到的频域函数分别为$\tilde{f}(\omega)$和$\tilde{h}(\omega)$，
+    利用Fourier变换定义证明下述关系式成立:
+    \begin{enumerate}
+        \item 如果$f(t) = \int_{-\infty}^{\infty} h(\tau) G(\mathbf{x},\mathbf{y},t-\tau) \mathrm{d} \tau$，
+            则有$\tilde{f}(\omega) = \tilde{h}(\omega) \tilde{G} (\mathbf{x},\mathbf{y},\omega)$。
+
+            根据Fourier变换，有:
+            \begin{equation}
+                \label{eq:conclusion 1}
+                \begin{aligned}
+                    \tilde{f}(\omega) &= \int_{-\infty}^{\infty} f(t) e^{i \omega t} \mathrm{d} t \\
+                    &= \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} h(\tau) G(\mathbf{x},\mathbf{y},t-\tau) \mathrm{d} \tau e^{i \omega t} \mathrm{d} t \\
+                    &= \int_{-\infty}^{\infty} h(\tau) \left[ \int_{-\infty}^{\infty} G(\mathbf{x},\mathbf{y},t-\tau) e^{i \omega (t-\tau)} \mathrm{d} t \right] e^{i \omega \tau} \mathrm{d} \tau \\
+                    &= \int_{-\infty}^{\infty} h(\tau) \tilde{G} (\mathbf{x},\mathbf{y},\omega) e^{i \omega \tau} \mathrm{d} \tau \\
+                    &= \tilde{G} (\mathbf{x},\mathbf{y},\omega) \int_{-\infty}^{\infty} h(\tau) e^{i \omega \tau} \mathrm{d} \tau \\
+                    &= \tilde{h}(\omega) \tilde{G} (\mathbf{x},\mathbf{y},\omega)
+                \end{aligned}
+            \end{equation}
+            原式得证。
+
+
+        \item 如果$f(t) = \int_{-\infty}^{\infty} h(\tau) \frac{\partial G(\mathbf{x},\mathbf{y},t-\tau)}{\partial \tau} \mathrm{d} \tau$，
+            则有$\tilde{f}(\omega) = - i \omega \tilde{h}(\omega) \tilde{G} (\mathbf{x},\mathbf{y},\omega)$。
+
+            根据分步积分，有:
+            \begin{equation}
+                \begin{aligned}
+                    f(\omega) &= \int_{-\infty}^{\infty} h(\tau) \frac{\partial G(\mathbf{x},\mathbf{y},t-\tau)}{\partial \tau} \mathrm{d} \tau \\
+                    &= \left. - h(\tau) G(\mathbf{x},\mathbf{y},t-\tau) \right|_{\tau = - \infty}^{\tau = \infty} - \int_{-\infty}^{\infty} - \frac{\partial h(\tau)}{\partial \tau} G(\mathbf{x},\mathbf{y},t-\tau) \mathrm{d} \tau
+                \end{aligned}
+            \end{equation}
+            根据$t$与$\tau$的因果关系，有:
+            \begin{equation}
+                \left. - h(\tau) G(\mathbf{x},\mathbf{y},t-\tau) \right|_{\tau = - \infty}^{\tau = \infty} = 0
+            \end{equation}
+            因此有:
+            \begin{equation}
+                \label{eq:mid conclusion 2}
+                f(\omega) = \int_{-\infty}^{\infty} \frac{\partial h(\tau)}{\partial \tau} G(\mathbf{x},\mathbf{y},t-\tau) \mathrm{d} \tau
+            \end{equation}
+            根据Fourier变换，有:
+            \begin{equation}
+                \label{eq:conclusion 2}
+                \begin{aligned}
+                    \tilde{f}(\omega) &= \int_{-\infty}^{\infty} f(t) e^{i \omega t} \mathrm{d} t \\
+                    &= \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} \frac{\partial h(\tau)}{\partial \tau} G(\mathbf{x},\mathbf{y},t-\tau) \mathrm{d} \tau e^{i \omega t} \mathrm{d} t \\
+                    &= \int_{-\infty}^{\infty} \frac{\partial h(\tau)}{\partial \tau} \left[ \int_{-\infty}^{\infty} G(\mathbf{x},\mathbf{y},t-\tau) e^{i \omega (t-\tau)} \mathrm{d} t \right] e^{i \omega \tau} \mathrm{d} \tau \\
+                    &= \tilde{G} (\mathbf{x},\mathbf{y},\omega) \int_{-\infty}^{\infty} \frac{\partial h(\tau)}{\partial \tau} e^{i \omega \tau} \mathrm{d} \tau \\
+                    &= - i \omega \tilde{h}(\omega) \tilde{G} (\mathbf{x},\mathbf{y},\omega)
+                \end{aligned}
+            \end{equation}
+            原式得证。
+    \end{enumerate}
+
+    \clearpage
+
+    \item 根据波动方程的时域解，证明频域积分解可以写为
+    \begin{equation*}
+        \tilde{p}^{\prime}(\boldsymbol{x}, \omega)=\int_{S} i \omega \rho_{0} \tilde{u}_{n}(\boldsymbol{y}, \omega) \tilde{G}(\boldsymbol{x}, \boldsymbol{y}, \omega) \mathrm{d} S-\int_{S} \tilde{p}^{\prime}(\boldsymbol{y}, \omega) \frac{\partial \tilde{G}(\boldsymbol{x}, \boldsymbol{y}, \omega)}{\partial \boldsymbol{n}} \mathrm{d} S .
+    \end{equation*}
+        % 已知声学波动方程,以及格林函数满足:
+        % \begin{align}
+        %     \label{eq:wave equation at time}
+        %     \frac{1}{c_{0}^{2}} \frac{\partial^{2} p^{\prime}}{\partial \tau^{2}}-\nabla^{2} p^{\prime} &= 0 \\
+        %     \label{eq:G equation at time}
+        %     \frac{1}{c_{0}^{2}} \frac{\partial^{2} G}{\partial \tau^{2}}-\nabla^{2} G &= \delta(\mathbf{x}-\mathbf{y}) \delta(t-\tau)
+        % \end{align}
+        % 对式\eqref{eq:wave equation at time}左右两边进行Fourier变换，得:
+        % \begin{equation}
+        %     \begin{aligned}
+        %         \int_{-\infty}^{\infty} \left[\frac{1}{c_{0}^{2}} \frac{\partial^{2} p^{\prime}}{\partial \tau^{2}}-\nabla^{2} p^{\prime}\right] e^{i \omega t} \mathrm{d} t &=
+        %         \int_{-\infty}^{\infty} \frac{1}{c_{0}^{2}} \frac{\partial^{2} p^{\prime}}{\partial \tau^{2}} e^{i \omega t} \mathrm{d} t - \int_{-\infty}^{\infty} \nabla^{2} p^{\prime} e^{i \omega t} \mathrm{d} t \\
+        %         &= \frac{(- i \omega)^{2}}{c_{0}^{2}} \tilde{p}^{\prime} - \nabla^{2} \tilde{p}^{\prime} \\
+        %         &= - \frac{(\omega)^{2}}{c_{0}^{2}} \tilde{p}^{\prime} - \nabla^{2} \tilde{p}^{\prime} = 0
+        %     \end{aligned}
+        % \end{equation}
+        % 令$k = \frac{ \omega }{ c_{0} } $，代入上式可得。
+        % \begin{align}
+        %     \label{eq:wave equation at frequency}
+        %     - k^{2} \tilde{p}^{\prime} - \nabla^{2} \tilde{p}^{\prime} = 0
+        % \end{align}
+        % 同理，对式\eqref{eq:G equation at time}两边进行Fourier变换，得:
+        % \begin{align}
+        %     \label{eq:G equation at frequency}
+        %     - k^{2} \tilde{G} - \nabla^{2} \tilde{G} = \delta(\mathbf{x}-\mathbf{y})
+        % \end{align}
+        % 将式\eqref{eq:wave equation at frequency}乘以$\tilde{G}$，
+        % 式\eqref{eq:G equation at frequency}乘以$\tilde{p}^{\prime}$，并相减，得:
+        % \begin{equation}
+        %     \tilde{p}^{\prime} \delta(\mathbf{x}-\mathbf{y}) = \tilde{G} \nabla^{2} \tilde{p}^{\prime} - \tilde{p}^{\prime} \nabla^{2} \tilde{G}
+        % \end{equation}
+        % 对上式两边进行积分，得
+        % \begin{equation}
+        %     \tilde{p}^{\prime}(\mathbf{x},\omega) = \int_{V} \left[\tilde{G} \nabla^{2} \tilde{p}^{\prime} - \tilde{p}^{\prime} \nabla^{2} \tilde{G}\right]
+        % \end{equation}
+        已知声学波动方程的时域解:
+        \begin{equation}
+            \begin{aligned}
+                p^{\prime}(\boldsymbol{x}, t)=&-\int_{-\infty}^{+\infty} \int_{S} \rho_{0} \frac{\partial u_{n}(\boldsymbol{y}, \tau)}{\partial \tau} G(\boldsymbol{x}, \boldsymbol{y}, t-\tau) \mathrm{d} S \mathrm{~d} \tau \\
+                &-\int_{-\infty}^{+\infty} \int_{S} p^{\prime}(\boldsymbol{y}, \tau) \frac{\partial G(\boldsymbol{x}, \boldsymbol{y}, t-\tau)}{\partial \boldsymbol{n}} \mathrm{~d} S \mathrm{~d} \tau
+            \end{aligned}
+        \end{equation}
+        对上式进行Fourier变换:
+        \begin{equation}
+            \label{eq:part all}
+            \begin{aligned}
+                \tilde{p}^{\prime}(\boldsymbol{x},\omega) 
+                &= \int_{-\infty}^{+\infty} \left[-\int_{-\infty}^{+\infty} \int_{S} \rho_{0} \frac{\partial u_{n}(\boldsymbol{y}, \tau)}{\partial \tau} G(\boldsymbol{x}, \boldsymbol{y}, t-\tau) \mathrm{d} S \mathrm{~d} \tau \right.\\
+                &{~~~} \left. -\int_{-\infty}^{+\infty} \int_{S} p^{\prime}(\boldsymbol{y}, \tau) \frac{\partial G(\boldsymbol{x}, \boldsymbol{y}, t-\tau)}{\partial \boldsymbol{n}} \mathrm{~d} S \mathrm{~d} \tau \right] e^{i \omega t} \mathrm{d} \\
+                &= - \int_{S} \left[ \int_{-\infty}^{+\infty} \int_{-\infty}^{+\infty} \rho_{0} \frac{\partial u_{n}(\boldsymbol{y}, \tau)}{\partial \tau} G(\boldsymbol{x}, \boldsymbol{y}, t-\tau) e^{i \omega t} \mathrm{d} \tau \mathrm{~d} t \right] \mathrm{d} S \\
+                &{~~~}- \int_{S} \left[ \int_{-\infty}^{+\infty} \int_{-\infty}^{+\infty} p^{\prime}(\boldsymbol{y}, \tau) \frac{\partial G(\boldsymbol{x}, \boldsymbol{y}, t-\tau)}{\partial \boldsymbol{n}} e^{i \omega t} \mathrm{d} \tau \mathrm{~d} t \right] \mathrm{d} S 
+            \end{aligned}
+        \end{equation}
+        由第一题中的结论，式\eqref{eq:mid conclusion 2}、\eqref{eq:conclusion 2}可得:
+        \begin{equation}
+            \label{eq:part 1}
+            \begin{aligned}
+                & \int_{-\infty}^{+\infty} \int_{-\infty}^{+\infty} \rho_{0} \frac{\partial u_{n}(\boldsymbol{y}, \tau)}{\partial \tau} G(\boldsymbol{x}, \boldsymbol{y}, t-\tau) e^{i \omega t} \mathrm{d} \tau \mathrm{~d} t \\
+                =& - i \omega \rho_{0} \tilde{u}_{n}(\boldsymbol{y}, \omega) \tilde{G}(\boldsymbol{x}, \boldsymbol{y}, \omega)
+            \end{aligned}
+        \end{equation}
+        有第一题中的结论，式\eqref{eq:conclusion 1}可得:
+        \begin{equation}
+            \label{eq:part 2}
+            \begin{aligned}
+                \int_{-\infty}^{+\infty} \int_{-\infty}^{+\infty} p^{\prime}(\boldsymbol{y}, \tau) \frac{\partial G(\boldsymbol{x}, \boldsymbol{y}, t-\tau)}{\partial \boldsymbol{n}} e^{i \omega t} \mathrm{d} \tau \mathrm{~d} t 
+                = \tilde{p}^{\prime}(\boldsymbol{y}, \omega) \frac{\partial \tilde{G}(\boldsymbol{x}, \boldsymbol{y}, \omega)}{\partial \boldsymbol{n}}
+            \end{aligned}
+        \end{equation}
+        将式\eqref{eq:part 1}、\eqref{eq:part 2}代入式\eqref{eq:part all}得:
+        \begin{equation}
+            \tilde{p}^{\prime}(\boldsymbol{x}, \omega)=\int_{S} i \omega \rho_{0} \tilde{u}_{n}(\boldsymbol{y}, \omega) \tilde{G}(\boldsymbol{x}, \boldsymbol{y}, \omega) \mathrm{d} S-\int_{S} \tilde{p}^{\prime}(\boldsymbol{y}, \omega) \frac{\partial \tilde{G}(\boldsymbol{x}, \boldsymbol{y}, \omega)}{\partial \boldsymbol{n}} \mathrm{d} S
+        \end{equation}
+        原式得证。
+
+\end{enumerate}

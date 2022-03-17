@@ -1,0 +1,124 @@
+\subsection*{}
+\vskip -1cm
+\noindent 1.证明自由空间格林函数的偏导数关系：
+$$\frac{\partial G_{0}}{\partial y_{i}}=
+\frac{x_{i}-y_{i}}{r}\left[\frac{1}{4 \pi r c_{0}} \frac{\partial}{\partial \tau} \delta\left(t-\tau-r / c_{0}\right)+
+\frac{\delta\left(t-\tau-r / c_{0}\right)}{4 \pi r^{2}}\right].$$
+
+\noindent 已知自由空间格林函数：
+\begin{equation}
+    G_{0}=\frac{1}{4 \pi r} \delta\left(t-\tau-\frac{r}{c_{0}}\right)     
+\end{equation}
+对$r$求偏导，得：
+\begin{equation}
+    \begin{aligned}
+        \label{eq:parital r}
+        \frac{\partial G_{0}}{\partial r} &= -\frac{1}{4 \pi r^{2}} \delta\left(t-\tau-\frac{r}{c_{0}}\right)+\frac{1}{4 \pi r} \frac{\partial \delta\left(t-\tau -\frac{r}{c_{0}}\right)}{\partial r} \\
+        &= -\frac{1}{4 \pi r^{2}} \delta\left(t-\tau-\frac{r}{c_{0}}\right)+\frac{1}{4 \pi r} \frac{\partial \delta\left(t-\tau -\frac{r}{c_{0}}\right)}{\partial \tau} \frac{\partial \tau}{\partial r}   
+    \end{aligned}
+\end{equation}
+由$ \tau $与$ r $的关系式$ \tau = t - \frac{r}{c_{0}} $可得：
+\begin{equation}
+    \frac{\partial \tau}{\partial r} = - \frac{1}{c_{0}}
+\end{equation} 
+代入式\eqref{eq:parital r},得
+\begin{equation}
+    \label{eq:parital r final}
+    \frac{\partial G_{0}}{\partial r} = -\frac{1}{4 \pi r^{2}} \delta\left(t-\tau-\frac{r}{c_{0}}\right)-\frac{1}{4 \pi r c_{0}} \frac{\partial \delta\left(t-\tau -\frac{r}{c_{0}}\right)}{\partial \tau}
+\end{equation}
+根据$r$对$y_{i}$的偏导数：
+\begin{equation}
+    \label{eq:r partial yi}
+    \begin{aligned}
+        \frac{\partial r}{\partial y_{i}} &=  \frac{\partial \sqrt{\sum (x_{i} - y_{i})^2}}{\partial y_{i}}
+        &= - \frac{x_{i} - y_{i}}{r}
+    \end{aligned}
+\end{equation}
+结合式\eqref{eq:parital r final},\eqref{eq:r partial yi},得：
+\begin{equation}
+    \label{eq:G0 partial yi}
+    \begin{aligned}
+        \frac{\partial G_{0}}{\partial y_{i}} &= \frac{\partial G_{0}}{\partial r} \frac{\partial r}{\partial y_{i}} \\
+        &= \frac{x_{i}-y_{i}}{r}\left[\frac{1}{4 \pi r c_{0}} \frac{\partial}{\partial \tau} \delta\left(t-\tau-r / c_{0}\right)+
+            \frac{\delta\left(t-\tau-r / c_{0}\right)}{4 \pi r^{2}}\right]
+    \end{aligned}
+\end{equation}
+原式得证。
+
+\clearpage
+
+\noindent 2.利用上述自由空间格林函数的偏导数关系式证明
+$$
+p^{\prime}(\mathbf{x}, t)=-\int_{-\infty}^{+\infty} \int_{S} \rho_{0} \frac{\partial u_{n}(\mathbf{y}, \tau)}{\partial \tau} G(\mathbf{x}, \mathbf{y}, t-\tau) \mathrm{d} S \mathrm{~d} \tau-\int_{-\infty}^{+\infty} \int_{S} p^{\prime}(\mathbf{y}, \tau) \frac{\partial G(\mathbf{x}, \mathbf{y}, t-\tau)}{\partial y_{i}} n_{i} \mathrm{~d} S \mathrm{~d} \tau
+$$
+可以改写为
+$$
+p^{\prime}(\mathbf{x}, t)=-\int_{S}\left[\rho_{0} \frac{\partial u_{n}}{\partial \tau}\right]_{\tau} \frac{\mathrm{d} S(\mathbf{y})}{4 \pi r}-\int_{S}\left[\frac{\partial p^{\prime}}{\partial \tau} n_{i}+\frac{p^{\prime} n_{i} c_{0}}{r}\right]_{\tau} \frac{\left(x_{i}-y_{i}\right) \mathrm{d} S(\mathbf{y})}{4 \pi r^{2} c_{0}}.
+$$
+原式右侧第一项代入自由格林函数，并对$\tau$求积分：
+\begin{equation}
+    \label{eq:right first final}
+    \begin{aligned}
+        \mbox{右侧第一项} &= -\int_{-\infty}^{+\infty} \int_{S} \rho_{0} \frac{\partial u_{n}(\mathbf{y}, \tau)}{\partial \tau} G_{0}(\mathbf{x}, \mathbf{y}, t-\tau) \mathrm{d} S \mathrm{~d} \tau \\
+        &= -\int_{s} \int_{-\infty}^{+\infty} \rho_{0} \frac{\partial u_{n}(\mathbf{y}, \tau)}{\partial \tau} \frac{1}{4 \pi r} \delta(\mathbf{x}, \mathbf{y}, t-\tau) \mathrm{d} \tau \mathrm{~d} s \\
+        &= -\int_{S}\left[\rho_{0} \frac{\partial u_{n}}{\partial \tau}\right]_{\tau} \frac{\mathrm{d} S(\mathbf{y})}{4 \pi r}
+    \end{aligned}
+\end{equation}
+原式右侧第二项代入自由格林函数偏导数关系式（式\eqref{eq:G0 partial yi}）:
+\begin{equation}
+    \label{eq:second}
+    \begin{aligned}
+        \mbox{右侧第二项} &= -\int_{-\infty}^{+\infty} \int_{S} p^{\prime}(\mathbf{y}, \tau) 
+        \frac{x_{i}-y_{i}}{r}\left[\frac{1}{4 \pi r c_{0}} \frac{\partial}{\partial \tau} \delta\left(t-\tau-\frac{r}{c_{0}} \right)+
+            \frac{\delta\left(t-\tau-\frac{r}{c_{0}}\right)}{4 \pi r^{2}}\right]
+        n_{i} \mathrm{~d} S \mathrm{~d} \tau \\
+        &= -\int_S \left[ \int_{-\infty}^{+\infty} p^{\prime}(\mathbf{y}, \tau) \frac{\partial}{\partial \tau} \delta\left(t-\tau-\frac{r}{c_{0}} \right) n_i \mathrm{d} \tau\right]  \frac{\left( x_{i}-y_{i} \right) \mathrm{d} S}{4 \pi r^2 c_{0}} \\
+        &{~~~}-\int_S \left[ \int_{-\infty}^{+\infty} p^{\prime}(\mathbf{y}, \tau) \frac{c_0}{r} \delta\left(t-\tau-\frac{r}{c_{0}} \right) n_i \mathrm{d} \tau\right]  \frac{\left( x_{i}-y_{i} \right) \mathrm{d} S}{4 \pi r^2 c_{0}}
+    \end{aligned}
+\end{equation}
+其中：
+\begin{equation}
+    \label{eq:int p multi delt partial tau}
+    \begin{aligned}
+        \int_{-\infty}^{+\infty} p^{\prime}(\mathbf{y}, \tau) \frac{\partial}{\partial \tau} \delta\left(t-\tau-\frac{r}{c_{0}} \right) n_i \mathrm{d} \tau &=  \left.-p^{\prime}(\mathbf{y}, \tau)\delta(t-\tau-\frac{r}{c_0}) n_i \right|_{\tau = -\infty}^{\tau = \infty} \\
+        &{~~~} - \int_{-\infty}^{+\infty} -\frac{\partial p^{\prime}(\mathbf{y}, \tau)}{\partial \tau}\delta(t-\tau-\frac{r}{c_0}) \mathrm{d}\tau
+    \end{aligned}
+\end{equation}
+根据$t$与$\tau$的因果关系，有：
+\begin{equation}
+    \left.-p^{\prime}(\mathbf{y}, \tau)\delta(t-\tau-\frac{r}{c_0}) n_i \right|_{\tau = -\infty}^{\tau = \infty} = 0
+\end{equation}
+因此有：
+\begin{equation}
+    \label{eq:result first}
+    \begin{aligned}
+        \int_{-\infty}^{+\infty} p^{\prime}(\mathbf{y}, \tau) \frac{\partial}{\partial \tau} \delta\left(t-\tau-\frac{r}{c_{0}} \right) n_i \mathrm{d} \tau &=
+        - \int_{-\infty}^{+\infty} -\frac{\partial p^{\prime}(\mathbf{y}, \tau)}{\partial \tau}\delta(t-\tau-\frac{r}{c_0}) \mathrm{d}\tau \\
+        &= \left[ \frac{\partial p^{\prime}}{\partial \tau} n_i \right]_{\tau}
+    \end{aligned}
+\end{equation}
+同时，式\eqref{eq:second}中：
+\begin{equation}
+    \label{eq:result second}
+    \int_{-\infty}^{+\infty} p^{\prime}(\mathbf{y}, \tau) \frac{c_0}{r} \delta\left(t-\tau-\frac{r}{c_{0}} \right) n_i \mathrm{d} \tau
+    = \left[ \frac{p^{\prime} n_i c_0}{r}\right]_{\tau}
+\end{equation}
+将式\eqref{eq:result first},\eqref{eq:result second}代入式\eqref{eq:second}，得：
+\begin{equation}
+    \label{eq:right second final}
+    \begin{aligned}
+        \mbox{右侧第二项} &= -\int_S  \left[ \frac{\partial p^{\prime}}{\partial \tau} n_i \right]_{\tau} \frac{\left( x_{i}-y_{i} \right) \mathrm{d} S}{4 \pi r^2 c_{0}} 
+        -\int_S  \left[ \frac{p^{\prime} n_i c_0}{r}\right]_{\tau} \frac{\left( x_{i}-y_{i} \right) \mathrm{d} S}{4 \pi r^2 c_{0}} \\
+        &= -\int_S  \left[ \frac{\partial p^{\prime}}{\partial \tau} n_i + \frac{p^{\prime} n_i c_0}{r} \right]_{\tau} \frac{\left( x_{i}-y_{i} \right) \mathrm{d} S}{4 \pi r^2 c_{0}}
+    \end{aligned}
+\end{equation}
+结合式\eqref{eq:right first final},\eqref{eq:right second final},得：
+\begin{equation}
+    p^{\prime}(\mathbf{x}, t)=-\int_{S}\left[\rho_{0} \frac{\partial u_{n}}{\partial \tau}\right]_{\tau} \frac{\mathrm{d} S(\mathbf{y})}{4 \pi r}-\int_{S}\left[\frac{\partial p^{\prime}}{\partial \tau} n_{i}+\frac{p^{\prime} n_{i} c_{0}}{r}\right]_{\tau} \frac{\left(x_{i}-y_{i}\right) \mathrm{d} S(\mathbf{y})}{4 \pi r^{2} c_{0}}
+\end{equation}
+原式得证。
+
+
+
+
+

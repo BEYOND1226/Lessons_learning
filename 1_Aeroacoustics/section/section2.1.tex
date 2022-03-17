@@ -1,0 +1,143 @@
+\begin{enumerate}
+    \item Lighthill声比拟方程能直接应用于高Ma流动诱发的气动噪声问题吗? \\
+        不能。
+        (1)Lighthill声比拟方程假设空气介质是均匀静止的，但该条件不能适用于高马赫数流动；
+        (2)Lighthill声比拟方程没有考虑能量输运作用；
+        (3)Lighthill声比拟方程仅适用于弱可压缩流动，不适用于高马赫数下的强可压缩流动。
+
+
+    \item 从Lighthill声比拟方程出发，详细证明方程的时域积分解为
+    % \begin{equation*}
+    %     p^{\prime}(\boldsymbol{x}, t)=
+    %     \frac{1}{4 \pi} \frac{\partial^{2}}{\partial x_{i} \partial x_{j}} \int_{V} \frac{T_{i j}\left(\boldsymbol{y}, t-r / c_{0}\right)}{r} \mathrm{~d}^{3} \boldsymbol{y}
+    % \end{equation*}
+    % 已知声比拟方程：
+    % \begin{equation}
+    %     \frac{\partial^{2} \rho^{\prime}}{\partial t^{2}}-c_{0}^{2} \frac{\partial^{2} \rho^{\prime}}{\partial x_{i}^{2}}
+    %     = \frac{\partial^{2} T_{i j}}{\partial x_{i} \partial x_{j}}
+    % \end{equation}
+    % 代入$\rho^{\prime}$与$p^{\prime}$的关系式：
+    % \begin{equation}
+    %     \rho^{\prime} = \frac{1}{c_{0}^{2}} p^{\prime}
+    % \end{equation}
+    % 声比拟方程可改写为：
+    % \begin{equation}
+    %     \label{eq:sheng bi ni fangcheng}
+    %     \frac{1}{c_{0}^{2}} \frac{\partial^{2} p^{\prime}(\mathbf{y},\tau)}{\partial \tau^{2}}- \frac{\partial^{2} p^{\prime}(\mathbf{y},\tau)}{\partial y_{i}^{2}}
+    %     = \frac{\partial^{2} T_{i j}}{\partial y_{i} \partial y_{j}}
+    % \end{equation}
+    % 已知格林函数满足关系式：
+    % \begin{equation}
+    %     \label{eq:ge lin han shu man zu guan xi shi}
+    %     \frac{1}{c_{0}^{2}} \frac{\partial^{2} G(\mathbf{x},\mathbf{y},\tau)}{\partial \tau^{2}}-\frac{\partial^{2} G(\mathbf{x},\mathbf{y},\tau)}{\partial y_{i}^{2}} 
+    %     = \delta(\mathbf{x}-\mathbf{y}) \delta(t-\tau)
+    % \end{equation}
+    % 将式\eqref{eq:sheng bi ni fangcheng}乘上$G(\mathbf{x},\mathbf{y},\tau)$，
+    % 式\eqref{eq:ge lin han shu man zu guan xi shi}乘上$p^{\prime}(\mathbf{y},\tau)$,
+    % 并相减，得：
+    % \begin{equation}
+    %     \begin{aligned}
+    %         \delta(\mathbf{x}-\mathbf{y}) \delta(t-\tau) p^{\prime}(\mathbf{y},\tau) 
+    %         =& \frac{1}{c_{0}^{2}} \left[ p^{\prime} \frac{\partial^{2} G}{\partial \tau^{2}} - G \frac{\partial^{2} p^{\prime}}{\partial \tau^{2}} \right] 
+    %          - \left[ p^{\prime} \frac{\partial^{2} G}{\partial y_{i}^{2}} - G \frac{\partial^{2}  p^{\prime}}{\partial y_{i}^{2}} \right] \\
+    %          & + G \frac{\partial^{2} T_{i j}}{\partial y_{i} \partial y_{j}}
+    %     \end{aligned}
+    % \end{equation}
+    % 对上式两边对时间和体积进行积分，得：
+    % \begin{equation}
+    %     \begin{aligned}
+    %         p^{\prime}(\mathbf{x},\tau) = 
+    %         & \int_{V} \int_{-\infty}^{\infty} \frac{1}{c_{0}^{2}} \left[ p^{\prime} \frac{\partial^{2} G}{\partial \tau^{2}} - G \frac{\partial^{2} p^{\prime}}{\partial \tau^{2}} \right] \mathrm{d} \tau \mathrm{d} V \\
+    %         & - \int_{-\infty}^{\infty} \int_{V} \left[ p^{\prime} \frac{\partial^{2} G}{\partial y_{i}^{2}} - G \frac{\partial^{2}  p^{\prime}}{\partial y_{i}^{2}} \right] \mathrm{d} V \mathrm{d} \tau \\
+    %         & + \int_{-\infty}^{\infty} \int_{V} G \frac{\partial^{2} T_{i j}}{\partial y_{i} \partial y_{j}} \mathrm{d} V \mathrm{d} \tau
+    %     \end{aligned}
+    % \end{equation}
+    % 根据$t$与$\tau$的因果关系，有：
+    % \begin{equation}
+    %     \int_{V} \int_{-\infty}^{\infty} \frac{1}{c_{0}^{2}} \left[ p^{\prime} \frac{\partial^{2} G}{\partial \tau^{2}} - G \frac{\partial^{2} p^{\prime}}{\partial \tau^{2}} \right] \mathrm{d} \tau \mathrm{d} V = 0
+    % \end{equation}
+    % 因此有:
+    % \begin{equation}
+    %     \begin{aligned}
+    %         p^{\prime}(\mathbf{x},\tau) = 
+    %         & - \int_{-\infty}^{\infty} \int_{V} \left[ p^{\prime} \frac{\partial^{2} G}{\partial y_{i}^{2}} - G \frac{\partial^{2}  p^{\prime}}{\partial y_{i}^{2}} \right] \mathrm{d} V \mathrm{d} \tau \\
+    %         & + \int_{-\infty}^{\infty} \int_{V} G \frac{\partial^{2} T_{i j}}{\partial y_{i} \partial y_{j}} \mathrm{d} V \mathrm{d} \tau
+    %     \end{aligned}
+    % \end{equation}
+    
+    根据声比拟方程，有：
+    \begin{equation}
+        \begin{aligned}
+            p^{\prime}(\mathbf{x},\tau) 
+            = \int_{-\infty}^{\infty} \int_{V} G \frac{\partial^{2} T_{i j}(\mathbf{y},\tau)}{\partial y_{i} \partial y_{j}} \mathrm{d} V \mathrm{d} \tau
+        \end{aligned}
+    \end{equation}
+    根据分步积分，有：
+    \begin{equation}
+        G \frac{\partial^{2} T_{i j}}{\partial y_{i} \partial y_{j}}=T_{i j} \frac{\partial^{2} G}{\partial y_{i} \partial y_{j}}+\frac{\partial}{\partial y_{i}}\left(G \frac{\partial T_{i j}}{\partial y_{j}}\right)-\frac{\partial}{\partial y_{j}}\left(T_{i j} \frac{\partial G}{\partial y_{i}}\right)
+    \end{equation}
+    因此有：
+    \begin{equation}
+        \begin{aligned}
+            \int_{-\infty}^{\infty} \int_{V} G \frac{\partial^{2} T_{i j}}{\partial y_{i} \partial y_{j}} \mathrm{d} V \mathrm{d} \tau =
+            & \int_{-\infty}^{\infty} \int_{V} T_{i j} \frac{\partial^{2} G}{\partial y_{i} \partial y_{j}} \mathrm{d} V \mathrm{d} \tau \\
+            & + \int_{-\infty}^{\infty} \int_{V} \frac{\partial}{\partial y_{i}}\left(G \frac{\partial T_{i j}}{\partial y_{j}}\right) \mathrm{d} V \mathrm{d} \tau \\
+            & - \int_{-\infty}^{\infty} \int_{V} \frac{\partial}{\partial y_{j}}\left(T_{i j} \frac{\partial G}{\partial y_{i}}\right) \mathrm{d} V \mathrm{d} \tau
+        \end{aligned}
+    \end{equation}
+    注意到$T_{i j} = T_{j i}$，因此有：
+    \begin{equation}
+        \begin{aligned}
+            \int_{-\infty}^{\infty} \int_{V} G \frac{\partial^{2} T_{i j}}{\partial y_{i} \partial y_{j}} \mathrm{d} V \mathrm{d} \tau =
+            & \int_{-\infty}^{\infty} \int_{V} T_{i j} \frac{\partial^{2} G}{\partial y_{i} \partial y_{j}} \mathrm{d} V \mathrm{d} \tau \\
+            & + \int_{-\infty}^{\infty} \int_{V} \frac{\partial}{\partial y_{j}}\left[G \frac{\partial T_{i j}}{\partial y_{i}}
+              - T_{i j} \frac{\partial G}{\partial y_{i}}\right] \mathrm{d} V \mathrm{d} \tau
+        \end{aligned}
+    \end{equation}
+    应用高斯散度定理，有：
+    \begin{equation}
+        \begin{aligned}
+            \int_{-\infty}^{\infty} \int_{V} G \frac{\partial^{2} T_{i j}}{\partial y_{i} \partial y_{j}} \mathrm{d} V \mathrm{d} \tau =
+            & \int_{-\infty}^{\infty} \int_{V} T_{i j} \frac{\partial^{2} G}{\partial y_{i} \partial y_{j}} \mathrm{d} V \mathrm{d} \tau \\
+            & + \int_{-\infty}^{\infty} \int_{S} \left[G \frac{\partial T_{i j}}{\partial y_{i}}
+              - T_{i j} \frac{\partial G}{\partial y_{i}}\right] n_{i} \mathrm{d} S \mathrm{d} \tau
+        \end{aligned}
+    \end{equation}
+    对于Lighthill声比拟方程，$S$为无穷大，因此有：
+    \begin{equation}
+        \int_{-\infty}^{\infty} \int_{S} \left[G \frac{\partial T_{i j}}{\partial y_{i}}
+        - T_{i j} \frac{\partial G}{\partial y_{i}}\right] n_{i} \mathrm{d} S \mathrm{d} \tau
+        = 0
+    \end{equation}
+    因此：
+    \begin{equation}
+        \begin{aligned}
+            p^{\prime}(\mathbf{x},\tau) 
+            &= \int_{-\infty}^{\infty} \int_{V} G \frac{\partial^{2} T_{i j}(\mathbf{y},\tau)}{\partial y_{i} \partial y_{j}} \mathrm{d} V \mathrm{d} \tau \\
+            &= \int_{-\infty}^{\infty} \int_{V} T_{i j}(\mathbf{y},\tau) \frac{\partial^{2} G}{\partial y_{i} \partial y_{j}} \mathrm{d} V \mathrm{d} \tau 
+        \end{aligned}
+    \end{equation}
+    代入自由空间格林函数$G_{0}$，有：
+    \begin{equation}
+        \begin{aligned}
+            p^{\prime}(\mathbf{x},\tau) 
+            &= \int_{-\infty}^{\infty} \int_{V} T_{i j}(\mathbf{y},\tau) \frac{\partial^{2} G_{0}(\mathbf{x},\mathbf{y},t-\tau)}{\partial y_{i} \partial y_{j}} \mathrm{d} V \mathrm{d} \tau 
+        \end{aligned}
+    \end{equation}
+    自由空间格林函数$G_{0}$满足：
+    \begin{equation}
+        \frac{\partial^{2} G_{0}}{\partial y_{i} \partial y_{j}} 
+        = \frac{\partial^{2} G_{0}}{\partial x_{i} \partial x_{j}} 
+    \end{equation}
+    因此有：
+    \begin{equation}
+        \begin{aligned}
+            p^{\prime}(\mathbf{x},\tau) 
+            &= \int_{-\infty}^{\infty} \int_{V} T_{i j}(\mathbf{y},\tau) \frac{\partial^{2} G_{0}(\mathbf{x},\mathbf{y},t-\tau)}{\partial x_{i} \partial x_{j}} \mathrm{d}^{3} \mathbf{y} \mathrm{~d} \tau \\
+            &= \frac{\partial^{2}}{\partial x_{i} \partial x_{j}} \int_{V} \int_{-\infty}^{\infty} T_{i j}(\mathbf{y},\tau)  G_{0}(\mathbf{x},\mathbf{y},t-\tau) \mathrm{d} \tau \mathrm{~d}^{3} \mathbf{y} \\
+            &= \frac{\partial^{2}}{\partial x_{i} \partial x_{j}} \int_{V} \int_{-\infty}^{\infty} T_{i j}(\mathbf{y},\tau)  \frac{\delta(t - \tau - r/c_{0})}{4 \pi r} \mathrm{d} \tau \mathrm{~d}^{3} \mathbf{y} \\
+            &= \frac{1}{4 \pi} \frac{\partial^{2}}{\partial x_{i} \partial x_{j}} \int_{V} \frac{T_{i j}\left(\mathbf{y}, t-r / c_{0}\right)}{r} \mathrm{~d}^{3} \mathbf{y}
+        \end{aligned}
+    \end{equation}
+    原式得证。
+\end{enumerate}

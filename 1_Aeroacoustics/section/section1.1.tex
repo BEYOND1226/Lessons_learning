@@ -1,0 +1,66 @@
+\subsection*{}
+\vskip -1cm
+线性声波在密度为$\rho_0$的均匀静止理想流体介质中以速度$c_0$传播，
+声学压力和声学速度用$p'$和$u'$表示，速度势函数用$\phi$表示，证明：
+
+\noindent (1)声压可以表示为$$ p'=-\rho_0 \frac{\partial{\phi}}{\partial{t}} . $$
+
+\noindent 已知线化声学动量方程：
+\begin{equation}
+    \rho_{0} \frac{\partial u^{\prime}}{\partial t}+\nabla p^{\prime}=0
+\end{equation}
+代入势函数:
+\begin{equation}
+    u'=\nabla \phi
+    \label{eq:0}
+\end{equation}
+得到：
+\begin{equation}
+    \begin{aligned}
+        \nabla p' &= - \rho_0 \frac{\partial u' }{\partial t} \\
+                  &= - \rho_0 \frac{\partial (\nabla \phi) }{\partial t} \\
+                  &= \nabla (- \rho_0 \frac{\partial \phi}{\partial t})
+    \end{aligned}
+\end{equation}
+由上式可得：
+\begin{equation}
+    p' = -\rho_0 \frac{\partial{\phi}}{\partial{t}}
+    \label{eq:1}
+\end{equation}
+原式得证。
+
+\noindent (2)势函数和声学速度满足波动方程
+$$\frac{1}{c_{0}^{2}} \frac{\partial^{2} \phi}{\partial t^{2}}-\nabla^{2} \phi=0,\frac{1}{c_{0}^{2}} \frac{\partial^{2} u'}{\partial t^{2}}-\nabla^{2} u'=0.$$
+
+\noindent 已知声学波动方程：
+\begin{equation}
+    \frac{1}{c_{0}^{2}} \frac{\partial^{2} p'}{\partial t^{2}}-\nabla^{2} p'=0
+\end{equation}
+代入\eqref{eq:1}式，得：
+\begin{equation}
+    \begin{aligned}
+        \frac{1}{c_{0}^{2}}\left(-\rho_{0}\right) \frac{\partial^{2}}{\partial t^{2}}\left(\frac{\partial \phi}{\partial t}\right)
+        -\left(-\rho_{0}\right) \nabla^{2} (\frac{\partial \phi}{\partial t}) &= 0 \\
+        \frac{\partial}{\partial t}\left[\frac{1}{\cos ^{2}} \frac{\partial^{2} \phi}{\partial t^{2}}\right]-
+        \frac{\partial}{\partial t}\left[\nabla^{2} \phi\right] &= 0 \\
+    \end{aligned}
+\end{equation}
+两边对$t$积分，得：
+\begin{equation}
+    \frac{1}{c_{0}^{2}} \frac{\partial^{2} \phi}{\partial t^{2}}-\nabla^{2} \phi=0
+    \label{eq:2}
+\end{equation}
+第一式得证。
+
+\noindent 将\eqref{eq:2}式两边求梯度，得：
+\begin{equation}
+    \begin{aligned}
+        \nabla \left(\frac{1}{c_{0}^{2}} \frac{\partial^{2} \phi}{\partial t^{2}}\right)-\nabla^{3} \phi &= 0 \\
+        \frac{1}{c_{0}^{2}} \frac{\partial^{2} \left(\nabla \phi\right)}{\partial t^{2}}-\nabla^{2} \left(\nabla \phi\right) &= 0
+    \end{aligned}
+\end{equation}
+代入势函数（式\eqref{eq:0}），得：
+\begin{equation}
+    \frac{1}{c_{0}^{2}} \frac{\partial^{2} u'}{\partial t^{2}}-\nabla^{2} u'=0
+\end{equation}
+第二式得证。

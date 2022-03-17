@@ -1,0 +1,73 @@
+\begin{enumerate}
+    \item 针对声学远场，证明近似表达式：
+        \[ \frac{\partial^{2}}{\partial x_{i} \partial x_{j}}\left[\frac{T_{i j}(\boldsymbol{y})}{r}\right] \approx \frac{1}{c_{0}^{2}} \frac{\left(x_{i}-y_{i}\right)\left(x_{j}-y_{j}\right)}{r^{3}}\left[\frac{\partial^{2} T_{i j}(\boldsymbol{y})}{\partial \tau^{2}}\right]. \]
+
+        根据偏分法则可以得到：
+        \begin{equation}
+            \begin{aligned}
+                \frac{\partial^{2}}{\partial x_{i} \partial x_{j}}\left[\frac{T_{i j}(\boldsymbol{y})}{r}\right]
+                &= \left[\frac{\partial^{2} T_{i j}(\mathbf{y})}{\partial \tau^{2}}\right] \frac{1}{r} \frac{\partial \tau}{\partial x_{i}} \frac{\partial \tau}{\partial x_{j}} \\
+                &+ 2\left[\frac{\partial T_{i j}(\mathbf{y})}{\partial \tau}\right] \frac{\partial \tau}{\partial x_{i}} \frac{\partial(1 / r)}{\partial x_{i}}+\left[T_{i j}(\mathbf{y})\right] \frac{\partial(1 / r)}{\partial x_{i} \partial x_{j}}
+            \end{aligned}
+        \end{equation}
+        对于声学远场，可以将忽略上式中的\(r^{-2}\)和\(r^{-3}\)项，因此有：
+        \begin{equation}
+            \label{eq:equation ignore r-2 r-3}
+            \frac{\partial^{2}}{\partial x_{i} \partial x_{j}}\left[\frac{T_{i j}(\boldsymbol{y})}{r}\right]
+            \approx \left[\frac{\partial^{2} T_{i j}(\mathbf{y})}{\partial \tau^{2}}\right] \frac{1}{r} \frac{\partial \tau}{\partial x_{i}} \frac{\partial \tau}{\partial x_{j}}
+        \end{equation}
+        其中，
+        \begin{equation}
+            \frac{\partial \tau}{\partial x_{i}}
+            = \frac{\partial \tau}{\partial r} \frac{\partial r}{\partial x_{i}}
+        \end{equation}
+        根据\(\tau\)与\(r\)关系式：
+        \begin{equation}
+            \tau = t - \frac{r}{c_{0}}
+        \end{equation}
+        有：
+        \begin{equation}
+            \frac{\partial \tau}{\partial r}
+            = - \frac{1}{c_{0}}
+        \end{equation}
+        又因为：
+        \begin{equation}
+            \begin{aligned}
+                \frac{\partial r}{\partial x_{i}}
+                &= \frac{\partial \sqrt{ \sum \left(x_{i}-y_{i}\right)^{2}}}{\partial x_{i}}
+                &= \frac{x_{i} - y_{i}}{r}
+            \end{aligned}
+        \end{equation}
+        因此有：
+        \begin{equation}
+            \frac{\partial \tau}{\partial x_{i}}
+            = - \frac{1}{c_{0}} \frac{x_{i} - y_{i}}{r}
+        \end{equation}
+        同理：
+        \begin{equation}
+            \frac{\partial \tau}{\partial x_{j}}
+            = - \frac{1}{c_{0}} \frac{x_{j} - y_{j}}{r}
+        \end{equation}
+        代入式\eqref{eq:equation ignore r-2 r-3}，得：
+        \begin{equation}
+            \frac{\partial^{2}}{\partial x_{i} \partial x_{j}}\left[\frac{T_{i j}(\boldsymbol{y})}{r}\right] 
+            \approx \frac{1}{c_{0}^{2}} \frac{\left(x_{i}-y_{i}\right)\left(x_{j}-y_{j}\right)}{r^{3}}\left[\frac{\partial^{2} T_{i j}(\boldsymbol{y})}{\partial \tau^{2}}\right]
+        \end{equation}
+        原式得证。
+
+    \clearpage
+
+    \item 对于等熵流动，
+    \(\frac{\partial^{2}}{\partial \tau^{2}}\left(p^{\prime}-c_{0}^{2} \rho^{\prime}\right)=0\)
+    一定成立吗？
+    
+        不一定。\( p^{\prime} = c_{0}^{2} \rho^{\prime} \)成立的前提是均匀介质，
+        对于梯度较大的介质，\( p^{\prime} \neq  c_{0}^{2} \rho^{\prime} \)，
+        因此，\(\frac{\partial^{2}}{\partial \tau^{2}}\left(p^{\prime}-c_{0}^{2} \rho^{\prime}\right)=0\) 不一定成立。
+
+        
+    \item 参数\(p^{\prime}\)和\(\rho^{\prime}\)哪一个更适合描述非稳态低速燃烧流动产生的噪声？
+        
+        \(p^{\prime}\)更适合。
+        非稳态低速燃烧流动涉及到能量方程，而参数\(p^{\prime}\)主要就源于能量方程，因此\(p^{\prime}\)更适合。
+\end{enumerate}
