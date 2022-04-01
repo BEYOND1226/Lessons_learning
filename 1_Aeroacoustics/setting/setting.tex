@@ -72,3 +72,23 @@ leftmargin=7mm,labelsep=1.5mm,topsep=-0.8mm,itemsep=-0.8mm}
 
 \renewcommand{\baselinestretch}{1.25}
 \sHalfXiaosi\fSong
+
+%----------------------------设置段落标题与目录格式----------------------------%
+\usepackage[sf]{titlesec}
+\usepackage{titletoc}
+\usepackage{caption}
+
+\titleformat{\chapter}[hang]{\normalfont\sSanhao\filcenter\fHei\bf}%
+{\sSanhao{\chaptertitlename}}{20pt}{\sSanhao}
+\titleformat{\section}[hang]{\fHei \bf \sSihao}% 四号
+{\sSihao \thesection}{0.5em}{}{}
+\titleformat{\subsection}[hang]{\fHei \bf \sXiaosi}% 小四 
+{\sXiaosi \thesubsection}{0.5em}{}{}
+\titleformat{\subsubsection}[hang]{\fHei \bf}%
+{(\arabic{subsubsection})}{0.5em}{}{}   % 小标题式的subsubsection:(4) 标题
+
+% 缩小正文中各级标题之间的缩进
+\titlespacing{\chapter}{0pt}{-3ex plus .1ex minus .2ex}{0.25em}
+\titlespacing{\section}{0pt}{-0.2em}{0em}
+\titlespacing{\subsection}{0pt}{0.5em}{0em}
+\titlespacing{\subsubsection}{0pt}{0.25em}{0pt}
