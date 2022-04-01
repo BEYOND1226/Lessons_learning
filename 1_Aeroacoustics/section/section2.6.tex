@@ -1,0 +1,74 @@
+\section*{Section2.6}
+
+\begin{enumerate}
+    \item 对均匀静止介质中以攻数  \(M_{i} \) 运动的声源, 证明 
+        \[ \frac{\partial M_{r}}{\partial \tau}
+        = \frac{1}{r}\left\{r_{i} \frac{\partial M_{i}}{\partial \tau}+c_{0}\left(M_{r}^{2}-M^{2}\right)\right\}
+        , M=\sqrt{M_{1}^{2}+M_{2}^{2}+M_{3}^{2}} \]
+
+        已知：
+        \begin{equation}
+            M_{r}=\frac{r_{i} M_{i}}{r}
+        \end{equation}
+        根据微分公式，有：
+        \begin{equation}
+            \label{eq:weifeng}
+            \begin{aligned}
+                \frac{\partial M_{r}}{\partial \tau}
+                &= \frac{\partial}{\partial \tau} (\frac{r_{i} M_{i}}{r}) \\
+                &= \frac{r_{i}}{r} \frac{\partial M_{i}}{\partial \tau}
+                + \frac{M_{i}}{r} \frac{\partial r_{i}}{\partial \tau}
+                - \frac{r_{i} M_{i}}{r^{2}} \frac{\partial r}{\partial \tau}
+            \end{aligned}
+        \end{equation}
+        其中：
+        \begin{equation}
+            \frac{M_{i}}{r} \frac{\partial r_{i}}{\partial \tau}
+            = \frac{M_{i}}{r} (-v_{i})
+            = -\frac{M_{i}^{2} c_{0}}{r}
+        \end{equation}
+        \begin{equation}
+            \frac{r_{i} M_{i}}{r^{2}} \frac{\partial r}{\partial \tau}
+            = \frac{M_{r}}{r} ( -M_{r} c_{0} )
+            = -\frac{M_{r}^{2} c_{0}}{r}
+        \end{equation}
+        带入式\eqref{eq:weifeng},得：
+        \begin{equation}
+            \begin{aligned}
+                \frac{\partial M_{r}}{\partial \tau}
+                &= \frac{r_{i}}{r} \frac{\partial M_{i}}{\partial \tau}
+                + \frac{M_{i}}{r} \frac{\partial r_{i}}{\partial \tau}
+                - \frac{r_{i} M_{i}}{r^{2}} \frac{\partial r}{\partial \tau} \\
+                &= \frac{r_{i}}{r} \frac{\partial M_{i}}{\partial \tau}
+                -\frac{M_{i}^{2} c_{0}}{r}
+                +\frac{M_{r}^{2} c_{0}}{r} \\
+                &= \frac{1}{r}\left\{r_{i} \frac{\partial M_{i}}{\partial \tau}
+                + c_{0}\left(M_{r}^{2}-M_{i}^{2}\right)\right\} \\
+                &= \frac{1}{r}\left\{r_{i} \frac{\partial M_{i}}{\partial \tau}
+                + c_{0}\left(M_{r}^{2}-M^{2}\right)\right\}
+                , M=\sqrt{M_{1}^{2}+M_{2}^{2}+M_{3}^{2}}
+            \end{aligned}
+        \end{equation}
+
+    \item 证明偶极子噪声的积分表达式
+        \begin{equation*}
+            \begin{aligned}
+                \pi p_{D}(\mathbf{x}, t)
+                =& \int_{S}\left[\frac{r_{i}}{r^{2} c_{0}\left(1-M_{r}\right)^{2}}\left\{\frac{\partial F_{i}}{\partial \tau}+\frac{F_{i}}{1-M_{r}}\left(\frac{r_{j}}{r} \frac{\partial M_{j}}{\partial \tau}\right)\right\}\right] \mathrm{d}^{2} \mathbf{y} \\
+                &+\int_{S}\left[\frac{1}{r^{2}\left(1-M_{r}\right)^{2}}\left\{\frac{F_{i} r_{i}}{r} \frac{1-M^{2}}{1-M_{r}}-F_{i} M_{i}\right\}\right] \mathrm{d}^{2} \mathbf{y}
+            \end{aligned}
+        \end{equation*}
+    已知：
+    \begin{equation}
+        \begin{aligned}
+            \pi p_{D}(\mathbf{x}, t)
+            = -\frac{\partial}{\partial x_{i}} \int_{S}\left[\frac{F_{i}}{r\left(1-M_{r}\right)}\right] \mathrm{d}^{2} \mathbf{y}
+        \end{aligned}
+    \end{equation}
+    根据微分公式，有：
+    \begin{equation}
+        \frac{\partial}{\partial x_{i}} \left[\frac{F_{i}}{r\left(1-M_{r}\right)}\right]
+        = \left[\frac{\partial}{\partial x_{i}}\left\{\frac{F_{i}}{r\left(1-M_{r}\right)}\right\}+\left[\frac{\partial \tau}{\partial x_{i}}\right.\right.  \left.\frac{\partial}{\partial \tau}\left\{\frac{F_{i}}{r\left(1-M_{r}\right)}\right\}\right]
+    \end{equation}
+
+\end{enumerate}

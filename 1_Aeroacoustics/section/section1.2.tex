@@ -1,5 +1,5 @@
-\subsection*{}
-\vskip -1cm
+\section*{Section1.2}
+
 \noindent 1.证明自由空间格林函数的偏导数关系：
 $$\frac{\partial G_{0}}{\partial y_{i}}=
 \frac{x_{i}-y_{i}}{r}\left[\frac{1}{4 \pi r c_{0}} \frac{\partial}{\partial \tau} \delta\left(t-\tau-r / c_{0}\right)+
@@ -68,12 +68,12 @@ $$
 \begin{equation}
     \label{eq:second}
     \begin{aligned}
-        \mbox{右侧第二项} &= -\int_{-\infty}^{+\infty} \int_{S} p^{\prime}(\mathbf{y}, \tau) 
-        \frac{x_{i}-y_{i}}{r}\left[\frac{1}{4 \pi r c_{0}} \frac{\partial}{\partial \tau} \delta\left(t-\tau-\frac{r}{c_{0}} \right)+
-            \frac{\delta\left(t-\tau-\frac{r}{c_{0}}\right)}{4 \pi r^{2}}\right]
+        \mbox{右侧第二项} =& -\int_{-\infty}^{+\infty} \int_{S} p^{\prime}(\mathbf{y}, \tau) 
+        \frac{x_{i}-y_{i}}{r} [\frac{1}{4 \pi r c_{0}} \frac{\partial}{\partial \tau} \delta\left(t-\tau-\frac{r}{c_{0}} \right) \\
+        &+\frac{\delta\left(t-\tau-\frac{r}{c_{0}}\right)}{4 \pi r^{2}}]
         n_{i} \mathrm{~d} S \mathrm{~d} \tau \\
-        &= -\int_S \left[ \int_{-\infty}^{+\infty} p^{\prime}(\mathbf{y}, \tau) \frac{\partial}{\partial \tau} \delta\left(t-\tau-\frac{r}{c_{0}} \right) n_i \mathrm{d} \tau\right]  \frac{\left( x_{i}-y_{i} \right) \mathrm{d} S}{4 \pi r^2 c_{0}} \\
-        &{~~~}-\int_S \left[ \int_{-\infty}^{+\infty} p^{\prime}(\mathbf{y}, \tau) \frac{c_0}{r} \delta\left(t-\tau-\frac{r}{c_{0}} \right) n_i \mathrm{d} \tau\right]  \frac{\left( x_{i}-y_{i} \right) \mathrm{d} S}{4 \pi r^2 c_{0}}
+        =& -\int_S \left[ \int_{-\infty}^{+\infty} p^{\prime}(\mathbf{y}, \tau) \frac{\partial}{\partial \tau} \delta\left(t-\tau-\frac{r}{c_{0}} \right) n_i \mathrm{d} \tau\right]  \frac{\left( x_{i}-y_{i} \right) \mathrm{d} S}{4 \pi r^2 c_{0}} \\
+        &-\int_S \left[ \int_{-\infty}^{+\infty} p^{\prime}(\mathbf{y}, \tau) \frac{c_0}{r} \delta\left(t-\tau-\frac{r}{c_{0}} \right) n_i \mathrm{d} \tau\right]  \frac{\left( x_{i}-y_{i} \right) \mathrm{d} S}{4 \pi r^2 c_{0}}
     \end{aligned}
 \end{equation}
 其中：
@@ -118,6 +118,7 @@ $$
 \end{equation}
 原式得证。
 
+\clearpage
 
 
 
