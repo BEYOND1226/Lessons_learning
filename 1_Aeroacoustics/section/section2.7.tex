@@ -1,0 +1,59 @@
+\section*{Section2.7}
+
+\begin{enumerate}
+    \item 将Fourier变换对定义为
+    \( \tilde{f}(\omega)=\int_{-\infty}^{\infty} f(t) e^{-i \omega t} \mathrm{~d} t, 
+    f(t)=\frac{1}{2 \pi} \int_{-\infty}^{\infty} \tilde{f}(\omega) e^{i \omega t} d \omega \), 
+    证明时域格林函数
+    \( G_{0}(\boldsymbol{x}, \boldsymbol{y}, t-\tau)=\frac{\delta\left(t-\tau-R / c_{0}\right)}{4 \pi \Re} \)
+    的频域表达式为
+    \( \tilde{G}_{0}(\boldsymbol{x}, \boldsymbol{y}, \omega)=\frac{\exp (-i k R)}{4 \pi \Re} \) 。
+
+        根据Fourier变换的定义，有:
+        \begin{equation}
+            \begin{aligned}
+                \tilde{G}_{0}(\boldsymbol{x}, \boldsymbol{y}, \omega)
+                &= \int_{-\infty}^{\infty} G_{0}(\boldsymbol{x}, \boldsymbol{y}, t-\tau) e^{-i \omega (t-\tau)} \mathrm{~d} t - \tau \\
+                &= \int_{-\infty}^{\infty} \frac{\delta\left(t-\tau-R / c_{0}\right)}{4 \pi \Re} e^{-i \omega (t-\tau)} \mathrm{~d} t - \tau \\
+                &= \frac{1}{{4 \pi \Re}} \int_{-\infty}^{\infty} \delta\left(t-\tau-R / c_{0}\right) e^{-i \omega (t-\tau-R/c_{0})} e^{ - i \omega R/c_{0}} \mathrm{~d} t - \tau \\
+                &= \frac{e^{ - i \omega R/c_{0}}}{{4 \pi \Re}} \int_{-\infty}^{\infty} \delta\left(t-\tau-R / c_{0}\right) e^{-i \omega (t-\tau-R/c_{0})} \mathrm{~d} t - \tau \\
+            \end{aligned}
+        \end{equation}
+        对于Dirac Function，有：
+        \begin{equation}
+            \begin{aligned}
+                \int_{-\infty}^{\infty} \delta\left( t \right) e^{-i \omega t} \mathrm{~d} t = 1
+            \end{aligned}
+        \end{equation}
+        因此有：
+        \begin{equation}
+            \begin{aligned}
+                \tilde{G}_{0}(\boldsymbol{x}, \boldsymbol{y}, \omega)
+                &= \frac{e^{ - i \omega R/c_{0}}}{{4 \pi \Re}} \int_{-\infty}^{\infty} \delta\left(t-\tau-R / c_{0}\right) e^{-i \omega (t-\tau-R/c_{0})} \mathrm{~d} t - \tau \\
+                &= \frac{e^{ - i \omega R/c_{0}}}{{4 \pi \Re}} \\
+                &= \frac{e^{ - i k R}}{{4 \pi \Re}}
+            \end{aligned}
+        \end{equation}
+        其中，\(k = \frac{\omega}{c_{0}}\)。
+
+    
+    \item 对均匀平均流中的静止点源  
+    \( Q(\boldsymbol{y}, \tau)=\exp (i \omega \tau) \), 
+    其辐射的声场用  
+    \( \phi(\boldsymbol{x}, t) \)表示, 
+    利用上题中的格林函数, 证明  
+    \( \phi(\boldsymbol{x}, t)=\frac{\exp \left[i \omega\left(t-R / c_{0}\right)\right]}{4 \pi \Re} \)
+
+        \begin{equation}
+            \begin{aligned}
+                \phi(\boldsymbol{x}, t)
+                &= \int_{-\infty}^{\infty} Q(\boldsymbol{y}, \tau) G_{0}(\boldsymbol{x}, \boldsymbol{y}, \tau) \mathrm{~d} \tau \\
+                &= \int_{-\infty}^{\infty} e^{i \omega \tau} \frac{\delta\left(t-\tau-R / c_{0}\right)}{4 \pi \Re} \mathrm{~d} \tau \\
+                &= \frac{e^{i \omega (t - R / c_{0})}}{4 \pi \Re} \int_{-\infty}^{\infty} \delta\left(t-\tau-R / c_{0}\right) e^{- i \omega (t - \tau - R / c_{0})} \mathrm{~d} \tau \\
+                &= \frac{e^{i \omega (t - R / c_{0})}}{4 \pi \Re}
+            \end{aligned}
+        \end{equation}
+        
+\end{enumerate}
+
+\clearpage
