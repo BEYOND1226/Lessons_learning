@@ -1,0 +1,124 @@
+\section*{Section3.1}
+
+\begin{enumerate}
+    \item 对无黏、均熵可压缩流动, 证明涡运动方程的表达形式可写为
+    \[
+    \frac{D}{D t}\left(\frac{\boldsymbol{\omega}}{\rho}\right)
+    =\frac{\boldsymbol{\omega}}{\rho} \cdot \nabla \mathbf{u}
+    \]
+
+        已知：
+        \begin{equation}
+            \frac{\partial \mathbf{u}}{\partial t}+\nabla H+\boldsymbol{\omega} \times \mathbf{u}-T \nabla s-\mathbf{e}=0
+        \end{equation}
+        两边求旋度得：
+        \begin{equation}
+            \nabla \times \left(\frac{\partial \mathbf{u}}{\partial t}+\nabla H+\boldsymbol{\omega} \times \mathbf{u}-T \nabla s-\mathbf{e}\right)=0
+        \end{equation}
+        因为\( \nabla \times \nabla H \equiv 0 \)，因此有：
+        \begin{equation}
+            \frac{\partial \boldsymbol{\omega}}{\partial t}+\nabla \times(\boldsymbol{\omega} \times \mathbf{u})-\nabla T \times \nabla s-\nabla \times \mathbf{e}=0
+        \end{equation}
+        又因为：
+        \begin{equation}
+            \begin{aligned}
+                \nabla \times(\boldsymbol{\omega} \times \mathbf{u})
+                &= \boldsymbol{\omega}(\nabla \cdot \mathbf{u})-\mathbf{u}(\nabla \cdot \boldsymbol{\omega})+(\mathbf{u} \cdot \nabla) \boldsymbol{\omega}-(\boldsymbol{\omega} \cdot \nabla) \mathbf{u} \\
+                \nabla \times \mathbf{e}
+                &= \nu \nabla^{2} \boldsymbol{\omega}
+            \end{aligned}
+        \end{equation}
+        结合\(\nabla \cdot \boldsymbol{\omega} = \nabla \cdot (\nabla \times \mathbf{u}) = 0\)得：
+        \begin{equation}
+            \begin{aligned}
+                & \frac{\partial \boldsymbol{\omega}}{\partial t}+\nabla \times(\boldsymbol{\omega} \times \mathbf{u})-\nabla T \times \nabla s-\nabla \times \mathbf{e} \\
+                =& \frac{\partial \boldsymbol{\omega}}{\partial t} + (\mathbf{u} \cdot \nabla) \boldsymbol{\omega} 
+                + \boldsymbol{\omega}(\nabla \cdot \mathbf{u}) - (\boldsymbol{\omega} \cdot \nabla) \mathbf{u} \\
+                &- \mathbf{u}(\nabla \cdot \boldsymbol{\omega})
+                - \nabla T \times \nabla s
+                - \nu \nabla^{2} \boldsymbol{\omega} \\
+                =& \frac{D \boldsymbol{\omega}}{D t}
+                + \boldsymbol{\omega}(\nabla \cdot \mathbf{u})
+                - (\boldsymbol{\omega} \cdot \nabla) \mathbf{u}
+                - \nabla T \times \nabla s
+                - \nu \nabla^{2} \boldsymbol{\omega} \\
+                =& 0 
+            \end{aligned}
+        \end{equation}
+        根据连续方程，有：
+        \begin{equation}
+            \begin{aligned}
+                \frac{\boldsymbol{\omega}}{\rho^{2}} ( \frac{D \rho }{D t} + \rho ( \nabla \cdot \mathbf{u} ) )
+                = \frac{\boldsymbol{\omega}}{\rho^{2}} \frac{D \rho }{D t} + \frac{\boldsymbol{\omega}}{\rho} ( \nabla \cdot \mathbf{u} ) 
+                = 0
+            \end{aligned}
+        \end{equation}
+        因此有：
+        \begin{equation}
+            \begin{aligned}
+                &\frac{1}{\rho} \frac{D \boldsymbol{\omega}}{D t}
+                - (\frac{\boldsymbol{\omega}}{\rho} \cdot \nabla) \mathbf{u}
+                - \frac{1}{\rho} \nabla T \times \nabla s
+                - \frac{\nu}{\rho} \nabla^{2} \boldsymbol{\omega}
+                - \frac{\boldsymbol{\omega}}{\rho^{2}} \frac{D \rho }{D t} \\
+                =& \frac{D}{D t}\left(\frac{\boldsymbol{\omega}}{\rho}\right)-\left(\frac{\boldsymbol{\omega}}{\rho} \cdot \nabla\right) \mathbf{u}-\frac{1}{\rho} \nabla T \times \nabla s-\frac{\nu}{\rho} \nabla^{2} \boldsymbol{\omega} \\
+                =& 0
+            \end{aligned}
+        \end{equation}
+        
+        对于无粘、等熵流动，有：
+        \begin{align}
+            \frac{1}{\rho} \nabla T \times \nabla s = 0 \\
+            \frac{\nu}{\rho} \nabla^{2} \boldsymbol{\omega} = 0
+        \end{align}
+        因此有：
+        \begin{equation}
+            \begin{aligned}
+                \frac{D}{D t}\left(\frac{\boldsymbol{\omega}}{\rho}\right)
+                = \left(\frac{\boldsymbol{\omega}}{\rho} \cdot \nabla\right) \mathbf{u}
+                = \frac{\boldsymbol{\omega}}{\rho} \cdot \nabla \mathbf{u}
+            \end{aligned}
+        \end{equation}
+        原式得证。
+
+
+    \item 对无黏正压流体的可压缩运动, 证明浴运动方程的表达形式可写为
+    \[
+    \frac{D \boldsymbol{\omega}}{D t}
+    =(\boldsymbol{\omega} \cdot \nabla) \mathbf{u}-\boldsymbol{\omega}(\nabla \cdot \mathbf{u})
+    \]
+
+        根据第1题中的推导，已知：
+        \begin{equation}
+            \begin{aligned}
+                \frac{D \boldsymbol{\omega}}{D t}
+                + \boldsymbol{\omega}(\nabla \cdot \mathbf{u})
+                - (\boldsymbol{\omega} \cdot \nabla) \mathbf{u}
+                - \nabla T \times \nabla s
+                - \nu \nabla^{2} \boldsymbol{\omega}
+                = 0
+            \end{aligned}
+        \end{equation}
+        对于无粘流动，有：
+        \begin{align}
+            \frac{\nu}{\rho} \nabla^{2} \boldsymbol{\omega} = 0
+        \end{align}
+        对于正压流动，有：
+        \begin{align}
+            \nabla T \times \nabla s = 0
+        \end{align}
+        因此有：
+        \begin{equation}
+            \frac{D \boldsymbol{\omega}}{D t}
+            + \boldsymbol{\omega}(\nabla \cdot \mathbf{u})
+            - (\boldsymbol{\omega} \cdot \nabla) \mathbf{u}
+            = 0
+        \end{equation}
+        \begin{equation}
+            \frac{D \boldsymbol{\omega}}{D t}
+            =(\boldsymbol{\omega} \cdot \nabla) \mathbf{u}-\boldsymbol{\omega}(\nabla \cdot \mathbf{u})        
+        \end{equation}
+        原式得证。
+\end{enumerate}
+
+\clearpage
