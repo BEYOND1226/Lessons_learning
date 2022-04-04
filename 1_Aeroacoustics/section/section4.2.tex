@@ -1,0 +1,67 @@
+\section*{Section4.2}
+
+\begin{enumerate}
+    \item 对完全气体, 证明热力学关系式
+    \(
+    \frac{\mathrm{d} \rho}{\rho}=\frac{1}{\gamma} \frac{\mathrm{d} p}{p}-\frac{\mathrm{d} s}{c_{p}}
+    \)成立。
+
+        根据热力学第二定律：
+        \begin{equation}
+            \begin{aligned}
+                \mathrm{d} e 
+                = T \mathrm{~d} s-p \mathrm{~d}(1 / \rho)
+                = C_{v} \mathrm{d} T \\
+                \mathrm{d} h 
+                = T \mathrm{~d} s+\mathrm{d} p / \rho
+                = C_{p} \mathrm{d} T
+            \end{aligned}
+        \end{equation}
+        因此有：
+        \begin{gather}
+            \frac{T \mathrm{~d} s-p \mathrm{~d}(1 / \rho)}{c_{v}}
+            =\frac{T \mathrm{~d} s+\mathrm{d} p / \rho}{c_{p}} \\
+            \frac{C_{p}}{C_{v}} \frac{p}{\rho^{2}} \mathrm{d} \rho
+            = \frac{\mathrm{d} p}{\rho} - \frac{C_{p}-C_{v}}{C_{p}} T \mathrm{d} s
+        \end{gather}
+        又因为：
+        \begin{gather}
+            \frac{C_{p}}{C_{v}} = \gamma \\
+            C_{p} = C_{v} + R \\
+            p = \gamma R T
+        \end{gather}
+        因此有：
+        \begin{equation}
+            \frac{\mathrm{d} \rho}{\rho}=\frac{1}{\gamma} \frac{\mathrm{d} p}{p}-\frac{\mathrm{d} s}{c_{p}}
+        \end{equation}
+        原式得证。
+
+    \item 对等熵过程, 利用上述热力学关系式, 进一步证明
+    \[
+    \frac{1}{\rho} \frac{\mathrm{D} \rho}{\mathrm{D} t}=\frac{1}{\gamma} \frac{\mathrm{D}}{\mathrm{D} t} \ln \left(\frac{p}{p_{0}}\right)-\frac{1}{c_{p}} \frac{\mathrm{D} s}{\mathrm{D} t}
+    \]
+    其中，\(p_{0}\)为常数。
+
+        由第1题的结论，已知：
+        \begin{gather}
+            \frac{\mathrm{d} \rho}{\rho}=\frac{1}{\gamma} \frac{\mathrm{d} p}{p}-\frac{\mathrm{d} s}{c_{p}}
+        \end{gather}
+        因此有：
+        \begin{gather}
+            \frac{1}{\rho} \frac{\mathrm{D} \rho}{\mathrm{D} t}
+            =\frac{1}{\gamma} \frac{1}{p} \frac{\mathrm{D} p}{\mathrm{D} t}-\frac{1}{c_{p}} \frac{\mathrm{D} s}{\mathrm{D} t}
+        \end{gather}
+        又因为：
+        \begin{equation}
+            \begin{aligned}
+                \frac{1}{p} \frac{\mathrm{D} p}{\mathrm{D} t} 
+                = \frac{p_{0}}{p} \frac{\mathrm{D}}{\mathrm{D} t} ( \frac{p}{p_{0}} )
+                = \frac{\mathrm{D}}{\mathrm{D} t} \ln ( \frac{p}{p_{0}} )
+            \end{aligned}
+        \end{equation}
+        因此有：
+        \begin{gather}
+            \frac{1}{\rho} \frac{\mathrm{D} \rho}{\mathrm{D} t}=\frac{1}{\gamma} \frac{\mathrm{D}}{\mathrm{D} t} \ln \left(\frac{p}{p_{0}}\right)-\frac{1}{c_{p}} \frac{\mathrm{D} s}{\mathrm{D} t}
+        \end{gather}
+        原式得证。
+\end{enumerate}
