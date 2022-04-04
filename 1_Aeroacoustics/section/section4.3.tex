@@ -1,0 +1,90 @@
+\section*{Section4.3}
+
+\begin{enumerate}
+    \item 将当地密度\( \rho \)、速度\(\boldsymbol{u}\)和压力\(p\)分解为时均值和脉动值两部分，即
+    \begin{align*}
+        \rho (\boldsymbol{x},t) &= \rho_{0} (\boldsymbol{x}) + \rho \prime (\boldsymbol{x},t) \\
+        \boldsymbol{u} (\boldsymbol{x},t) &= \boldsymbol{u}_{0} (\boldsymbol{x}) + \boldsymbol{u} \prime (\boldsymbol{x},t) \\
+        p (\boldsymbol{x},t) &= p_{0} (\boldsymbol{x}) + p \prime (\boldsymbol{x},t)
+    \end{align*}
+    对线性小振幅扰动，以\((\rho \prime , \rho_{0} \prime \boldsymbol{u} \prime, p \prime)\)为声学变量，建立线化欧拉方程组。
+
+        对于连续方程：
+        \begin{gather}
+            \frac{\partial \rho}{\partial t}+\nabla \cdot(\rho \mathbf{u})=0
+        \end{gather}
+        代入声学变量，得：
+        \begin{gather}
+            \frac{\partial \rho^{\prime}}{\partial t}+\nabla \cdot\left(\rho_{0} \mathbf{u}_{0}+\rho^{\prime} \mathbf{u}_{0}+\rho_{0} \mathbf{u}^{\prime}+\rho^{\prime} \mathbf{u}^{\prime}\right)=0
+        \end{gather}
+        又因为：
+        \begin{gather}
+            \nabla \cdot\left(\rho_{0} \mathbf{u}_{0}\right) = - \frac{\partial \rho_{0}}{\partial t} = 0
+        \end{gather}
+        得到线化连续方程：
+        \begin{equation}
+            \begin{aligned}
+                & \frac{\partial \rho^{\prime}}{\partial t}+\nabla \cdot\left(\rho^{\prime} \mathbf{u}_{0}+\rho_{0} \mathbf{u}^{\prime}+\rho^{\prime} \mathbf{u}^{\prime}\right) \\
+                =& \frac{\partial \rho^{\prime}}{\partial t}+\mathbf{u}_{0} \cdot \nabla \rho^{\prime}+\rho^{\prime} \nabla \cdot \mathbf{u}_{0}+\rho_{0} \nabla \cdot \mathbf{u}^{\prime}+\mathbf{u}^{\prime} \cdot \nabla \rho_{0} \\
+                =& -\nabla \cdot\left(\rho^{\prime} \mathbf{u}^{\prime}\right) 
+            \end{aligned}        
+        \end{equation}
+        对于动量方程：
+        \begin{gather}
+            \rho \frac{\partial \mathbf{u}}{\partial t}+\rho \mathbf{u} \cdot \nabla \mathbf{u}+\nabla p=0
+        \end{gather}
+        代入声学变量，得：
+        \begin{equation}
+            \begin{aligned}
+                & (\rho_{0} + \rho \prime) \frac{\partial (\boldsymbol{u}_{0}+ \boldsymbol{u} \prime) }{\partial t}+(\rho_{0} + \rho \prime) (\boldsymbol{u}_{0} + \boldsymbol{u} \prime ) \cdot \nabla (\boldsymbol{u}_{0} + \boldsymbol{u} \prime )+\nabla (p_{0}  + p \prime ) \\
+                =& \rho_{0}\left(\frac{\partial \mathbf{u}^{\prime}}{\partial t}+\mathbf{u}_{0} \cdot \nabla \mathbf{u}^{\prime}\right)+\left(\rho_{0} \mathbf{u}_{0} \cdot \nabla \mathbf{u}_{0}+\nabla p_{0}\right)+\left(\rho_{0} \mathbf{u}^{\prime}+\rho^{\prime} \mathbf{u}_{0}\right) \cdot \nabla \mathbf{u}_{0}+\nabla p^{\prime} \\
+                &+\left[\rho^{\prime}\left(\frac{\partial \mathbf{u}^{\prime}}{\partial t}+\mathbf{u}_{0} \cdot \nabla \mathbf{u}^{\prime}\right)+\rho \mathbf{u}^{\prime} \cdot \nabla \mathbf{u}^{\prime}+\rho^{\prime} \mathbf{u}^{\prime} \cdot \nabla \mathbf{u}_{0}\right]
+                = 0
+            \end{aligned}
+        \end{equation}
+        又因为：
+        \begin{gather}
+            \rho_{0} \mathbf{u}_{0} \cdot \nabla \mathbf{u}_{0}+\nabla p_{0}=0 \\
+            \frac{\mathrm{D}_{0}}{\mathrm{D} t}=\frac{\partial}{\partial t}+\mathbf{u}_{0} \cdot \nabla
+        \end{gather}
+        得到线化动量方程：
+        \begin{equation}
+            \rho_{0} \frac{\mathrm{D}_{0} \mathbf{u}^{\prime}}{\mathrm{D} t}+\left(\rho_{0} \mathbf{u}^{\prime}+\rho^{\prime} \mathbf{u}_{0}\right) \cdot \nabla \mathbf{u}_{0}+\nabla p^{\prime}
+            =-\rho^{\prime} \frac{\mathrm{D}_{0} \mathbf{u}^{\prime}}{\mathrm{D} t}-\rho_{0} \mathbf{u}^{\prime} \cdot \nabla \mathbf{u}^{\prime}-\rho^{\prime} \mathbf{u}^{\prime} \cdot \nabla \mathbf{u}_{0}
+        \end{equation}
+        对于能量方程：
+        \begin{equation}
+            \frac{\partial p}{\partial t}+\mathbf{u} \cdot \nabla p+\gamma p \nabla \cdot \mathbf{u}=0
+        \end{equation}
+        代入声学变量，得：
+        \begin{equation}
+            \begin{aligned}
+                & \frac{\partial (p_{0}  + p \prime )}{\partial t}+\mathbf{(\boldsymbol{u}_{0}+ \boldsymbol{u} \prime)} \cdot \nabla (p_{0}  + p \prime )+\gamma (p_{0}  + p \prime ) \nabla \cdot \mathbf{(\boldsymbol{u}_{0}+ \boldsymbol{u} \prime)} \\
+                =& \left(\frac{\partial p^{\prime}}{\partial t}+\mathbf{u}_{0} \cdot \nabla p^{\prime}\right)+\left(\mathbf{u}_{0} \cdot \nabla p_{0}+\gamma p_{0} \nabla \cdot \mathbf{u}_{0}\right)+\mathbf{u}^{\prime} \cdot \nabla p_{0}+\mathbf{u}^{\prime} \cdot \nabla p^{\prime} \\
+                & +\gamma p_{0} \nabla \cdot \mathbf{u}^{\prime}+\gamma p^{\prime} \nabla \cdot \mathbf{u}^{\prime}+\gamma p^{\prime} \nabla \cdot \mathbf{u}_{0} \\
+                =& 0
+            \end{aligned}
+        \end{equation}
+        又因为：
+        \begin{gather}
+            \mathbf{u}_{0} \cdot \nabla p_{0}+\gamma p_{0} \nabla \cdot \mathbf{u}_{0}=0
+        \end{gather}
+        得到线化能量方程：
+        \begin{equation}
+            \frac{D_{0} p^{\prime}}{D t}+\mathbf{u}^{\prime} \cdot \nabla p_{0}+\gamma p_{0} \nabla \cdot \mathbf{u}^{\prime}+\gamma p^{\prime} \nabla \cdot \mathbf{u}_{0}
+            =-\mathbf{u}^{\prime} \cdot \nabla p^{\prime}-\gamma p^{\prime} \nabla \cdot \mathbf{u}^{\prime}
+        \end{equation}
+        综上，得到线化欧拉方程组
+        \begin{equation}
+            \begin{gathered}
+                \frac{\partial \rho^{\prime}}{\partial t}+\mathbf{u}_{0} \cdot \nabla \rho^{\prime}+\rho^{\prime} \nabla \cdot \mathbf{u}_{0}+\rho_{0} \nabla \cdot \mathbf{u}^{\prime}+\mathbf{u}^{\prime} \cdot \nabla \rho_{0}
+                = -\nabla \cdot\left(\rho^{\prime} \mathbf{u}^{\prime}\right) 
+                \\
+                \rho_{0} \frac{\mathrm{D}_{0} \mathbf{u}^{\prime}}{\mathrm{D} t}+\left(\rho_{0} \mathbf{u}^{\prime}+\rho^{\prime} \mathbf{u}_{0}\right) \cdot \nabla \mathbf{u}_{0}+\nabla p^{\prime}
+                =-\rho^{\prime} \frac{\mathrm{D}_{0} \mathbf{u}^{\prime}}{\mathrm{D} t}-\rho_{0} \mathbf{u}^{\prime} \cdot \nabla \mathbf{u}^{\prime}-\rho^{\prime} \mathbf{u}^{\prime} \cdot \nabla \mathbf{u}_{0}
+                \\
+                \frac{D_{0} p^{\prime}}{D t}+\mathbf{u}^{\prime} \cdot \nabla p_{0}+\gamma p_{0} \nabla \cdot \mathbf{u}^{\prime}+\gamma p^{\prime} \nabla \cdot \mathbf{u}_{0}
+                =-\mathbf{u}^{\prime} \cdot \nabla p^{\prime}-\gamma p^{\prime} \nabla \cdot \mathbf{u}^{\prime}    
+            \end{gathered}
+        \end{equation}
+\end{enumerate}
