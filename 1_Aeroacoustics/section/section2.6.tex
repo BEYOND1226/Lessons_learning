@@ -70,7 +70,56 @@
         \frac{\partial}{\partial x_{i}} \left[\frac{F_{i}}{r\left(1-M_{r}\right)}\right]
         = \left[\frac{\partial}{\partial x_{i}}\left\{\frac{F_{i}}{r\left(1-M_{r}\right)}\right\}+\left[\frac{\partial \tau}{\partial x_{i}}\right.\right.  \left.\frac{\partial}{\partial \tau}\left\{\frac{F_{i}}{r\left(1-M_{r}\right)}\right\}\right]
     \end{equation}
-
+    其中：
+    \begin{equation}
+        \begin{aligned}
+            \frac{\partial}{\partial x_{i}}\left\{\frac{F_{i}}{r\left(1-M_{r}\right)}\right\}
+            &= - \frac{F_{i}}{r^{2}\left(1-M_{r}\right)^{2}} \frac{\partial r\left(1-M_{r}\right)}{\partial x_{i}} \\
+            &= - \frac{F_{i}}{r^{2}\left(1-M_{r}\right)^{2}} \left[ \frac{\partial r }{\partial x_{i}} - \frac{\partial rM_{r}}{\partial x_{i}} \right] \\
+        \end{aligned}
+    \end{equation}
+    又因为：
+    \begin{gather}
+        \frac{\partial r }{\partial x_{i}} = \frac{r_{i}}{r} \\
+        \frac{\partial rM_{r}}{\partial x_{i} } = \frac{\partial r_{i}M_{i}}{\partial x_{i} } = M_{i} \frac{\partial r_{i}}{\partial x_{i} } = M_{i}
+    \end{gather}
+    因此有：
+    \begin{equation}
+        \frac{\partial}{\partial x_{i}}\left\{\frac{F_{i}}{r\left(1-M_{r}\right)}\right\}
+        = - \frac{F_{i}}{r^{2}\left(1-M_{r}\right)^{2}} \left( \frac{r_{i}}{r} - M_{i} \right)
+    \end{equation}
+    同时，对于：
+    \begin{equation}
+        \frac{\partial \tau}{\partial x_{i}} \frac{\partial}{\partial \tau}\left\{\frac{F_{i}}{r\left(1-M_{r}\right)}\right\}
+    \end{equation}
+    其中，
+    \begin{equation}
+        \frac{\partial \tau}{\partial x_{i}}
+        = \frac{\partial \tau}{\partial g} \frac{\partial g}{\partial x_{i}}
+        = \frac{1}{1-M_{r}} \frac{r_{i}}{r c_{0}}
+        = \frac{r_{i}}{r c_{0} (1-M_{r})}
+    \end{equation}
+    \begin{equation}
+        \begin{aligned}
+            \frac{\partial}{\partial \tau}\left\{\frac{F_{i}}{r\left(1-M_{r}\right)}\right\} 
+            =& F_{i} \frac{\partial}{\partial \tau}\left\{\frac{1}{r\left(1-M_{r}\right)}\right\} + \frac{1}{r\left(1-M_{r}\right)} \frac{\partial F_{i}}{\partial \tau} \\
+            =& - \frac{F_{i}}{r^{2}\left(1-M_{r}\right)^{2}} \left\{ (1-M_{r}) \frac{\partial r}{\partial \tau} - r \frac{\partial M_{r}}{\partial \tau}\right\} \\
+             & +\frac{1}{r\left(1-M_{r}\right)} \frac{\partial F_{i}}{\partial \tau} \\
+            =& \frac{F_{i}}{r^{2}\left(1-M_{r}\right)^{2}} \left\{ (1-M_{r}) c_{0} M_{r} + r \frac{\partial M_{r}}{\partial \tau}\right\} \\
+            & +\frac{1}{r\left(1-M_{r}\right)} \frac{\partial F_{i}}{\partial \tau} \\
+        \end{aligned}
+    \end{equation}
+    综上，
+    \begin{equation}
+        \begin{aligned}
+            \pi p_{D}(\mathbf{x}, t)
+            =& -\frac{\partial}{\partial x_{i}} \int_{S}\left[\frac{F_{i}}{r\left(1-M_{r}\right)}\right] \mathrm{d}^{2} \mathbf{y} \\
+            =& - \int_{S} \left[\frac{\partial}{\partial x_{i}}\left\{\frac{F_{i}}{r\left(1-M_{r}\right)}\right\}+\left[\frac{\partial \tau}{\partial x_{i}}\right.\right.  \left.\frac{\partial}{\partial \tau}\left\{\frac{F_{i}}{r\left(1-M_{r}\right)}\right\}\right] \mathrm{d}^{2} \mathbf{y} \\
+            =& \int_{S}\left[\frac{r_{i}}{r^{2} c_{0}\left(1-M_{r}\right)^{2}}\left\{\frac{\partial F_{i}}{\partial \tau}+\frac{F_{i}}{1-M_{r}}\left(\frac{r_{j}}{r} \frac{\partial M_{j}}{\partial \tau}\right)\right\}\right] \mathrm{d}^{2} \mathbf{y} \\
+            &+\int_{S}\left[\frac{1}{r^{2}\left(1-M_{r}\right)^{2}}\left\{\frac{F_{i} r_{i}}{r} \frac{1-M^{2}}{1-M_{r}}-F_{i} M_{i}\right\}\right] \mathrm{d}^{2} \mathbf{y}
+        \end{aligned}
+    \end{equation}
+    原式得证。
 \end{enumerate}
 
 \clearpage

@@ -6,11 +6,28 @@
     如果已知观察点 \( \boldsymbol{x} \) 的时间 \(t\),
     如何确定延迟时间 \( \tau \) ?
     
+        对于均匀运动介质中的静止声源，根据Prandtl-Glauert-Lorentz变换，有：
+        \begin{equation}
+            \bar{t}=\beta t+M \frac{x_{1}}{\beta c_{0}}, M=\frac{v}{c_{\infty}}
+        \end{equation}
+        可以得到延迟时间\(\bar{\tau}\)为：
+        \begin{equation}
+            \bar{\tau}=\frac{M x_{1}-r_{1} \bar{M} \beta}{\beta c_{0}}+\tau \beta
+        \end{equation}
+        
     
     \item  假设均匀静止介质中有一点源以恒定速度 \(v\) (亚声速) 沿 \( x_{1} \) 轴正向运动,
     其初始位置为 \( \boldsymbol{y}_{0} \), 
     如果已知观察点\( \boldsymbol{x} \)的时间\(t\), 如何确定延迟时间\( \tau \)?
     
+        对于静止介质中的运动声源，有
+        \begin{equation}
+            t-\tau=\frac{1}{c_{\infty}} \sqrt{\left(x_{1}-v \tau\right)^{2}+x_{2}^{2}}
+        \end{equation}
+        求得：
+        \begin{equation}
+            \bar{\tau}=\frac{\left(c_{\infty} t-M x_{1}\right) \pm \sqrt{\left(x_{1}-v t\right)^{2}+\left(1-M^{2}\right)x_{2}^{2}}}{c_{\infty}\left(1-M^{2}\right)}, M=\frac{v}{c_{\infty}}
+        \end{equation}
     
     \item 均匀静止介质中, 一强度为\( q(t) \)的点源以恒定速度 \( \boldsymbol{v} \) 亚声速直线运动, 
     且 \( t=0 \) 时刻恰好经 过坐标原点, 辐射声场的速度势函数 \( \phi(\boldsymbol{x}, t) \) 满足方程
@@ -20,6 +37,7 @@
     \phi(\boldsymbol{x}, t)=\frac{q\left(t-R / c_{0}\right)}{4 \pi R(1-M \cos \theta)}, \quad M=\frac{|\boldsymbol{v}|}{c_{0}}
     \]
     其中, \( R \) 为观察点 \( \boldsymbol{x} \) 与声源辐射声波时所在位置间的距离, \(\theta \) 为声源运动方向与声传播方向的夹角。
+
 \end{enumerate}
 
 \clearpage
