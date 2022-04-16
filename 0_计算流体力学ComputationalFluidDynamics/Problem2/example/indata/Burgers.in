@@ -1,0 +1,19 @@
+mu  nsolver  delta_x  delta_t
+0.015   0		  0.01    0.001
+
+
+
+**************参数说明*****************
+mu    	粘性系数 
+		= 0.0
+		= 0.005
+		= 0.01
+		= 0.015
+
+nsolver 求解方法
+		= 0  lax-wenderoff
+		= 1  macormark
+			
+delta_x	空间步长
+
+delta_t 时间步长
